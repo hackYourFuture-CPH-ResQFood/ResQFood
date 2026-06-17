@@ -1,3 +1,20 @@
+/*
+Documentation on how to use this API and other filters it supports 
+https://developer.sallinggroup.dev/apireference/stores
+Data obtained from 
+https://api.sallinggroup.com/v2/stores?zip=2000&per_page=10
+with zip changing based on information provided below. 
+
+Area codes used for the mock data of the stores
+8000
+5600
+5683
+2000
+8930
+6000
+5270
+*/
+
 const stores = [
   {
     id: "df2a1b67-a44e-4102-9174-c20cf1aca4a0",

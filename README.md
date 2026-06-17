@@ -57,31 +57,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Area codes and coordinates used for the mock data of the food waste with 3km radius
-
-#zip
-5270
-5210
-8000
-6000
-8900
-8940
-8920
-8930
-
-#coordinates:
-55.433254496518224, 10.331202929624965 - Odense
-55.47999457509673, 9.468238817884966 - Kolding
-56.110353375447396, 10.149808645633518 - Aarhus
-56.46520890470744, 10.03243669373023 - Randers
-
-## Area codes used for the mock data of the stores
-
-8000
-5600
-5683
-2000
-8930
-6000
-5270

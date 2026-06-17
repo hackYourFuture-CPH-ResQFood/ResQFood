@@ -1,4 +1,35 @@
-// Hardcoded mock food waste data for development before switching to fetch
+/* Hardcoded mock food waste data for development before switching to fetch
+
+Area codes and coordinates used for the mock data of the food waste with 3km radius
+Documentation on how to use this API and other filters it supports 
+https://developer.sallinggroup.dev/apireference/food-waste
+
+Data obtained from 
+
+1. 
+https://api.sallinggroup.com/v1/food-waste/?zip=8000
+with zip changing based on information provided below. 
+
+#zip
+5270
+5210
+8000
+6000
+8900
+8940
+8920
+8930
+
+2. 
+https://api.sallinggroup.com/v1/food-waste/?geo=56.154459,10.206777&radius=3
+with coordinates changing based on information provided below. 
+
+#coordinates:
+55.433254496518224, 10.331202929624965 - Odense
+55.47999457509673, 9.468238817884966 - Kolding
+56.110353375447396, 10.149808645633518 - Aarhus
+56.46520890470744, 10.03243669373023 - Randers
+*/
 
 const data = [
   {
