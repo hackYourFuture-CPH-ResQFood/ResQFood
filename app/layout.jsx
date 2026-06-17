@@ -1,3 +1,6 @@
+import Header from "@/components/layout/header/Header";
+import styles from "./layout.module.css";
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "ResQFood",
@@ -7,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main className={styles.siteMain}>{children}</main>
+      </body>
     </html>
   );
 }
