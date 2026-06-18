@@ -41,19 +41,95 @@ ResQFood/
 - `styles/` - Shared styles and CSS module files.
 - `utils/` - General helper functions used across the project.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✅ Definition of Done Done
+A task is only Done Done when:
+The feature works locally.
+The code is pushed to a feature branch.
+A Pull Request into development is opened.
+The PR has a clear title and description.
+The feature PR has at least 1 approval.
+The Trello card shows reviewer names.
+All review comments are resolved.
+The code is merged into development.
+For release work, development is merged into main with 2 approvals.
+Vercel deployment works.
+The feature works on a real mobile device.
+The Trello card is moved to Done Done.
+🚨 Hotfix Rules
+A hotfix is an urgent fix for something broken on main.
+Hotfix branches use this format:
+development/your-name/hotfix-issue-name
 
-## Learn More
+Example:
+development/reza/hotfix-vercel-deployment
 
-To learn more about Next.js, take a look at the following resources:
+Hotfix rules:
+Keep it very small.
+Fix only the urgent issue.
+Still use a Pull Request.
+Get 2 reviewers if possible.
+Notify the team on Slack immediately.
+🔐 Git Security Rules
+Never commit private environment files or API keys.
+.gitignore must include:
+.env
+.env.local
+.next
+node_modules
+.DS_Store
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Only .env.example should be committed.
+If an API key is accidentally committed:
+Stop immediately.
+Tell the team and mentors.
+Remove the key from the repository.
+Rotate the API key.
+Check Git history.
+Do not continue until fixed.
+🗓️ Project Timeline
+Date
+Milestone
+June 14, 2026
+Project kickoff, team roles, repo setup, Trello setup
+June 16, 2026
+Online standup 1
+June 21, 2026
+Week 2 begins: core features
+June 23, 2026
+Online standup 2
+June 28, 2026
+Week 3 begins: quality and polish
+June 30, 2026
+Online standup 3
+July 5, 2026
+Code freeze: bug fixes only
+July 7, 2026
+Online standup 4
+July 12, 2026
+Project hand-in and graduation demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+👥 Team M2A2
+Name
+Role
+Mila
+Scrum Master · QA
+Reza
+Deployment Specialist · Dependency Manager · Git Support · QA
+Matea
+Git Specialist · QA Lead
+Ahmad
+Design Leader
 
-## Deploy on Vercel
+All team members contribute to coding, testing, reviewing, and improving the final product.
+📜 Data Partner Credit
+Store, food-waste, and holiday data is provided by Salling Group through their developer API.
+Salling Group operates major Danish retail brands including Bilka, Føtex, Netto, and Salling.
+Developer portal:
+https://developer.sallinggroup.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🤝 Contributing
+This project was built as a student capstone project for HackYourFuture Denmark. It is not currently open for external contributions, but feel free to fork it, learn from it, or reach out to the team.
+📄 License
+This project is open source under the MIT License.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with 💚 by Team M2A2 — HackYourFuture Denmark, June–July 2026.
