@@ -1,9 +1,9 @@
 .card {
   border-radius: var(--radius-md);
-  border: var(--border-card);
-  box-shadow: var(--shadow-card);
+  border: var(--border-surface);
+  box-shadow: var(--shadow-elevated);
   padding: var(--spacing-md);
-  background-color: var(--color-white);
+  background-color: var(--color-surface);
   transition:
     box-shadow var(--transition-fast),
     transform var(--transition-fast);
@@ -14,7 +14,7 @@
 }
 
 .cardClickable:hover {
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-elevated-hover);
   transform: translateY(-2px);
 }
 .cardClickable:focus-visible {
