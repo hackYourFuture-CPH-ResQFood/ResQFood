@@ -11,8 +11,10 @@
 	--color-success: #16834a;
 	--color-text: #173b2c;
 	--color-background: #ffffff;
+	--color-hover: #f0f0f0;
 	--shadow-card: 0 4px 16px rgb(15 47 79 / 0.08);
 	--shadow-hover: 0 8px 24px rgb(15 47 79 / 0.14);
+	--font-body: 'Arial', Helvetica, sans-serif;
 	--font-xs: 0.7rem;
 	--font-sm: 0.8rem;
 	--font-md: 0.9rem;
