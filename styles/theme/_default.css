@@ -6,8 +6,9 @@
 	--color-background-primary-hover: #143e66;
 	--color-background-secondary: #eef7f1;
 	--color-canvas: #f7faf8;
-	--color-surface: #ffffff;
+	--color-surface: #c5d5f4;
 	--color-surface-hover: #f0f4f2;
+	--color-surface-muted: #c4c6c4;
 	--color-border: #d8e5dc;
 	--color-border-subtle: #e5ebea;
 
@@ -52,10 +53,16 @@
 	--border-subtle: 1px solid var(--color-border-subtle);
 	--border-surface: 1px solid var(--color-border);
 	--border-strong: 2px solid var(--color-background-primary);
+	--border-error: 1px solid var(--color-error-text);
+	--border-success: 1px solid var(--color-success-text);
+	--border-button: 1px solid var(--color-background-primary);	
+	--border-button-hover: 1px solid var(--color-background-primary-hover);
+	--border-card: 1px solid var(--color-border);
 
 	/* Shadows */
 	--shadow-elevated: 0 4px 16px rgb(15 47 79 / 0.08);
 	--shadow-elevated-hover: 0 8px 24px rgb(15 47 79 / 0.14);
+	--shadow-card: 0 2px 8px rgb(15 47 79 / 0.06);
 
 	/* Motion */
 	--transition-fast: 160ms ease;
