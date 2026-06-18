@@ -12,15 +12,21 @@ ResQFood/
 ├── components/
 │   ├── filter/
 │   ├── layout/
+│   │   ├── footer/
+│   │   ├── header/
+│   │   └── navigation/
 │   ├── map/
 │   ├── product/
 │   ├── store/
 │   └── ui/
+│       └── Card/
 ├── hooks/
 ├── mock/
 ├── public/
 ├── services/
 ├── styles/
+│   ├── base/
+│   └── theme/
 └── utils/
 ```
 
@@ -30,15 +36,21 @@ ResQFood/
 - `components/` - Reusable UI and feature components.
 - `components/filter/` - Components for filtering store or product lists.
 - `components/layout/` - Shared layout components used across pages.
+- `components/layout/footer/` - Footer component and related styles.
+- `components/layout/header/` - Header component and related styles.
+- `components/layout/navigation/` - Navigation component and related styles.
 - `components/map/` - Components related to map views and location display.
 - `components/product/` - Components for product cards, lists, and product details.
 - `components/store/` - Components for store cards, lists, and store details.
 - `components/ui/` - Small shared UI building blocks such as buttons and inputs.
+- `components/ui/Card/` - Reusable card component and its scoped styles.
 - `hooks/` - Custom React hooks shared across the app.
 - `mock/` - Mock data used for development before real API data is available.
 - `public/` - Static assets served directly by Next.js.
 - `services/` - API and data-fetching helpers.
 - `styles/` - Shared styles and CSS module files.
+- `styles/base/` - Base CSS files such as reset, typography, animations, and keyframes.
+- `styles/theme/` - Theme-level CSS variables and default design values.
 - `utils/` - General helper functions used across the project.
 
 ✅ Definition of Done Done
