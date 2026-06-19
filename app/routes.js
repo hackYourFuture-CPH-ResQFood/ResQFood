@@ -35,22 +35,27 @@ const ICON = {
 export const navigationItems = [
 	{
 		name: "Home",
+		href: "/",
 		icon: ICON.HOME,
 	},
 	{
 		name: "Map",
+		href: "#",
 		icon: ICON.MAP,
 	},
 	{
 		name: "Stores",
+		href: "/stores",
 		icon: ICON.STORES,
 	},
 	{
 		name: "Favorite",
+		href: "#",
 		icon: ICON.FAVORITE,
 	},
 	{
 		name: "InStore",
+		href: "#",
 		icon: ICON.INSTORE,
 	},
 ];

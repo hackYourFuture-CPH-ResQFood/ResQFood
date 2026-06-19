@@ -18,6 +18,10 @@
 	list-style: none;
 }
 
+.list li {
+	min-width: 0;
+}
+
 .item {
 	display: flex;
 	flex-direction: column;
@@ -29,6 +33,7 @@
 	color: #264237;
 	font-size: 0.82rem;
 	font-weight: 700;
+	text-decoration: none;
 	text-align: center;
     cursor: pointer;
 }
