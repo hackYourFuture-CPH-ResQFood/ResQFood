@@ -1,0 +1,26 @@
+.skeleton {
+  display: block;
+  overflow: hidden;
+  background-color: var(--color-surface-muted);
+  background-image: linear-gradient(
+    to right,
+    var(--color-surface-muted) 0%,
+    var(--color-surface-muted) 35%,
+    var(--color-canvas) 50%,
+    var(--color-surface-muted) 65%,
+    var(--color-surface-muted) 100%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  animation: shimmer 1.2s infinite linear;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -100% 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  }
+}
