@@ -1,0 +1,23 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* App Definition */
+  color: #8cc152; /* App Definition */
+}
+
+.mark {
+  width: 40px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.q {
+  color: var(--color-brand);
+}
