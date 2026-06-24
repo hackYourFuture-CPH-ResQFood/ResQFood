@@ -40,33 +40,28 @@ html {
 
   /* Backgrounds */
   --color-background-page: #ffffff;
-  --color-background-brand-default: #002747;
-  --color-background-brand-bilka: #0096e6;
-  --color-background-brand-foetex: #002f6c;
-  --color-background-brand-netto: #ffd400;
-  --color-background-secondary-default: #93c894;
+  --color-background-primary: #002747;
+  --color-background-secondary: #93c894;
+  --color-background-error: #f4dada;
+  --color-background-success: #dff5e7;
+  --color-background-accent: #42a866;
+  --color-background-warn: #f6f8af;
 
   /* Text Colors */
-  --color-text-primary-default: #000000;
+  --color-text-primary: #000000;
   --color-text-primary-inverse: #ffffff;
-  --color-text-secondary-default: #706868;
-  --color-text-tertiary-default: #d58319;
-  --color-text-quaternary-default: #14612f;
+  --color-text-success: #14612f;
+  --color-text-error: #691212;
+  --color-text-muted: #706868;
+  --color-text-attention: #d58319;
+  --color-text-highlight: #14612f;
 
   /* Borders */
-  --color-border-primary-default: #e1d6d6;
+  --color-border-primary: #e1d6d6;
+  --color-border-error: #b3261e;
+  --color-border-success: #c0e5c1;
 
   /* Badges */
-  --color-badge-primary-background: #dff5e7;
-  --color-badge-primary-border: #c0e5c1;
-  --color-badge-primary-text: #14612f;
-
-  --color-badge-secondary-background: #f4dada;
-  --color-badge-secondary-border: #b3261e;
-  --color-badge-secondary-text: #691212;
-
-  --color-badge-tertiary-background: #42a866;
-  --color-badge-quaternary-background: #f6f8af;
 
   /* ==================== TYPOGRAPHY ==================== */
 
@@ -146,85 +141,12 @@ html {
   /* Border Radius */
   --border-radius-large: 20px;
   --border-radius-small: 15px;
-
-  /* OLD CSS THAT I DO NOT DARE TO REMOVE JUST YET */
-
-  /* Colors: base theme
-  --color-text-primary: #173b2c;
-  --color-text-secondary: #5f746b;
-  --color-background-primary: #0f2f4f;
-  --color-background-primary-hover: #143e66;
-  --color-background-secondary: #eef7f1;
-  --color-canvas: #f7faf8;
-  --color-surface: #c5d5f4;
-  --color-surface-hover: #f0f4f2;
-  --color-surface-muted: #c4c6c4;
-  --color-border: #d8e5dc;
-  --color-border-subtle: #e5ebea;
-  --color-white: #ffffff;
-  --color-brand: #2d6a4f;
-
-  /* Colors: store brands */
-  /* --color-bilka-background-primary: #0057b8;
-  --color-foetex-background-primary: #002f6c;
-  --color-netto-background-primary: #ffd400;
-  --color-salling-background-primary: #00843d; */
-
-  /* Colors: states
-  --color-error-text: #d92d20;
-  --color-error-background: #fff1f0;
-  --color-success-text: #16834a;
-  --color-success-background: #eef8f0; */
-
-  /* Typography */
-  /* --font-family-body: Arial, Helvetica, sans-serif;
-  --font-family-headline: Arial, Helvetica, sans-serif;
-  --font-size-xs: 0.7rem;
-  --font-size-sm: 0.8rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-body: 0.95rem;
-  --font-size-section: 1.1rem;
-  --font-size-headline: 1.75rem;
-  --font-leading-body: 1.5rem;
-  --font-leading-headline: 1.2rem; */
-
-  /* Spacing
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2.5rem;
-  --spacing-2xl: 4rem;
-
-  /* Radius */
-  /* --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
-  --border-radius-full: 9999px; */
-
-  /* Borders */
-  /* --border-subtle: 1px solid var(--color-border-subtle);
-  --border-surface: 1px solid var(--color-border);
-  --border-strong: 2px solid var(--color-background-primary);
-  --border-error: 1px solid var(--color-error-text);
-  --border-success: 1px solid var(--color-success-text);
-  --border-button: 1px solid var(--color-background-primary);
-  --border-button-hover: 1px solid var(--color-background-primary-hover);
-  --border-card: 1px solid var(--color-border); */
-
-  /* Shadows */
-  /* --shadow-elevated: 0 4px 16px rgb(15 47 79 / 0.08);
-  --shadow-elevated-hover: 0 8px 24px rgb(15 47 79 / 0.14);
-  --shadow-card: 0 2px 8px rgb(15 47 79 / 0.06); */
+  --border-radius-full: 999px;
 
   /* Motion */
-  /* --transition-fast: 160ms ease;
-  --transition-base: 220ms ease; */
-
-  /* Focus */
-  /* --focus-outline: 2px solid var(--color-background-primary); */
+  --transition-fast: 160ms ease;
+  --transition-base: 220ms ease;
 
   /* Opacity */
-  /* --opacity-disabled: 0.5; */
+  --opacity-disabled: 0.5;
 }
