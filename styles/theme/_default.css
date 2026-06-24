@@ -52,7 +52,7 @@
   --font-weight-headline-small: 600; /* SemiBold */
 
   /* Title Large */
-  --font-family-title-large: "Roboto", sans-serif;
+  --font-family-title-large: "Inter", sans-serif;
   --font-size-title-large: 0.875rem; /* 14px */
   --font-weight-title-large: 500; /* Medium */
 
@@ -96,14 +96,6 @@
   --line-height-body-large: 1.5625rem; /* 25px */
   --font-weight-body-large: 400; /* Regular */
 
-  /* Body Medium */
-  --font-family-body-medium: "Roboto", sans-serif;
-  --font-size-body-medium: 0.875rem; /* 14px */
-  --line-height-body-medium: 1.25rem; /* 20px */
-  --font-weight-body-medium: 400; /* Regular */
-  --letter-spacing-body-medium: 0.015625rem; /* 0.25px tracking */
-  --font-weight-body-medium-emphasized: 500; /* Medium */
-
   /* Body Small */
   --font-family-body-small: "Inter", sans-serif;
   --font-size-body-small: 0.5625rem; /* 9px */
@@ -115,6 +107,13 @@
   --font-size-disclaimer-small: 0.75rem; /* 12px */
   --line-height-disclaimer-small: 0.5rem; /* 8px */
   --font-weight-disclaimer-small: 300; /* Light */
+
+  /* Shadows */
+  --shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  /* Border Radius */
+  --border-radius-large: 20px;
+  --border-radius-small: 15px;
 
   /* OLD CSS THAT I DO NOT DARE TO REMOVE JUST YET */
 
