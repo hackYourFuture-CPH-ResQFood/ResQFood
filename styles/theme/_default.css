@@ -1,5 +1,124 @@
 :root {
-  /* Colors: base theme */
+  /* ==================== COLORS ==================== */
+
+  /* Backgrounds */
+  --color-background-page: #ffffff;
+  --color-background-brand-default: #002747;
+  --color-background-brand-bilka: #0096e6;
+  --color-background-brand-foetex: #002f6c;
+  --color-background-brand-netto: #ffd400;
+  --color-background-secondary-default: #93c894;
+
+  /* Text Colors */
+  --color-text-primary-default: #000000;
+  --color-text-primary-inverse: #ffffff;
+  --color-text-secondary-default: #706868;
+  --color-text-tertiary-default: #d58319;
+  --color-text-quaternary-default: #14612f;
+
+  /* Borders */
+  --color-border-primary-default: #e1d6d6;
+
+  /* Badges */
+  --color-badge-primary-background: #dff5e7;
+  --color-badge-primary-border: #c0e5c1;
+  --color-badge-primary-text: #14612f;
+
+  --color-badge-secondary-background: #f4dada;
+  --color-badge-secondary-border: #b3261e;
+  --color-badge-secondary-text: #691212;
+
+  --color-badge-tertiary-background: #42a866;
+  --color-badge-quaternary-background: #f6f8af;
+
+  /* ==================== TYPOGRAPHY ==================== */
+
+  /* Headline Large */
+  --font-family-headline-large: "Inter", sans-serif;
+  --font-size-headline-large: 2rem; /* 32px */
+  --line-height-headline-large: 2.5rem; /* 40px */
+  --font-weight-headline-large: 800; /* ExtraBold */
+
+  /* Headline Medium */
+  --font-family-headline-medium: "Inter", sans-serif;
+  --font-size-headline-medium: 1.25rem; /* 20px */
+  --line-height-headline-medium: 2.25rem; /* 36px */
+  --font-weight-headline-medium: 800; /* ExtraBold */
+
+  /* Headline Small */
+  --font-family-headline-small: "Inter", sans-serif;
+  --font-size-headline-small: 1rem; /* 16px */
+  --line-height-headline-small: 2rem; /* 32px */
+  --font-weight-headline-small: 600; /* SemiBold */
+
+  /* Title Large */
+  --font-family-title-large: "Roboto", sans-serif;
+  --font-size-title-large: 0.875rem; /* 14px */
+  --font-weight-title-large: 500; /* Medium */
+
+  /* Title Medium */
+  --font-family-title-medium: "Inter", sans-serif;
+  --font-size-title-medium: 0.75rem; /* 12px */
+  --font-weight-title-medium: 500; /* Medium */
+
+  /* Title Small */
+  --font-family-title-small: "Inter", sans-serif;
+  --font-size-title-small: 0.6875rem; /* 11px */
+  --font-weight-title-small: 500; /* Medium */
+
+  /* Label Large */
+  --font-family-label-large: "Inter", sans-serif;
+  --font-size-label-large: 0.9375rem; /* 15px */
+  --line-height-label-large: 1.25rem; /* 20px */
+  --font-weight-label-large: 600; /* SemiBold */
+
+  /* Label Medium */
+  --font-family-label-medium: "Inter", sans-serif;
+  --font-size-label-medium: 0.6875rem; /* 11px */
+  --font-weight-label-medium: 500; /* Medium */
+
+  /* Label Small */
+  --font-family-label-small: "Inter", sans-serif;
+  --font-size-label-small: 0.5625rem; /* 9px */
+  --line-height-label-small: 0.5rem; /* 8px */
+  --font-weight-label-small: 500; /* Medium */
+  --font-weight-label-small-emphasized: 600; /* SemiBold */
+
+  /* Label Extra Small */
+  --font-family-label-extra-small: "Inter", sans-serif;
+  --font-size-label-extra-small: 0.375rem; /* 6px */
+  --font-weight-label-extra-small: 600; /* SemiBold */
+  --font-weight-label-extra-small-emphasized: 800; /* ExtraBold */
+
+  /* Body Large */
+  --font-family-body-large: "Inter", sans-serif;
+  --font-size-body-large: 0.9375rem; /* 15px */
+  --line-height-body-large: 1.5625rem; /* 25px */
+  --font-weight-body-large: 400; /* Regular */
+
+  /* Body Medium */
+  --font-family-body-medium: "Roboto", sans-serif;
+  --font-size-body-medium: 0.875rem; /* 14px */
+  --line-height-body-medium: 1.25rem; /* 20px */
+  --font-weight-body-medium: 400; /* Regular */
+  --letter-spacing-body-medium: 0.015625rem; /* 0.25px tracking */
+  --font-weight-body-medium-emphasized: 500; /* Medium */
+
+  /* Body Small */
+  --font-family-body-small: "Inter", sans-serif;
+  --font-size-body-small: 0.5625rem; /* 9px */
+  --font-weight-body-small: 500; /* Medium */
+  --font-weight-body-small-emphasized: 600; /* SemiBold */
+
+  /* Disclaimer Small */
+  --font-family-disclaimer-small: "Inter", sans-serif;
+  --font-size-disclaimer-small: 0.75rem; /* 12px */
+  --line-height-disclaimer-small: 0.5rem; /* 8px */
+  --font-weight-disclaimer-small: 300; /* Light */
+
+  /* OLD CSS THAT I DO NOT DARE TO REMOVE JUST YET */
+
+  /* Colors: base theme
   --color-text-primary: #173b2c;
   --color-text-secondary: #5f746b;
   --color-background-primary: #0f2f4f;
@@ -15,19 +134,19 @@
   --color-brand: #2d6a4f;
 
   /* Colors: store brands */
-  --color-bilka-background-primary: #0057b8;
+  /* --color-bilka-background-primary: #0057b8;
   --color-foetex-background-primary: #002f6c;
   --color-netto-background-primary: #ffd400;
-  --color-salling-background-primary: #00843d;
+  --color-salling-background-primary: #00843d; */
 
-  /* Colors: states */
+  /* Colors: states
   --color-error-text: #d92d20;
   --color-error-background: #fff1f0;
   --color-success-text: #16834a;
-  --color-success-background: #eef8f0;
+  --color-success-background: #eef8f0; */
 
   /* Typography */
-  --font-family-body: Arial, Helvetica, sans-serif;
+  /* --font-family-body: Arial, Helvetica, sans-serif;
   --font-family-headline: Arial, Helvetica, sans-serif;
   --font-size-xs: 0.7rem;
   --font-size-sm: 0.8rem;
@@ -37,9 +156,9 @@
   --font-size-section: 1.1rem;
   --font-size-headline: 1.75rem;
   --font-leading-body: 1.5rem;
-  --font-leading-headline: 1.2rem;
+  --font-leading-headline: 1.2rem; */
 
-  /* Spacing */
+  /* Spacing
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -48,33 +167,33 @@
   --spacing-2xl: 4rem;
 
   /* Radius */
-  --border-radius-sm: 4px;
+  /* --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 16px;
-  --border-radius-full: 9999px;
+  --border-radius-full: 9999px; */
 
   /* Borders */
-  --border-subtle: 1px solid var(--color-border-subtle);
+  /* --border-subtle: 1px solid var(--color-border-subtle);
   --border-surface: 1px solid var(--color-border);
   --border-strong: 2px solid var(--color-background-primary);
   --border-error: 1px solid var(--color-error-text);
   --border-success: 1px solid var(--color-success-text);
   --border-button: 1px solid var(--color-background-primary);
   --border-button-hover: 1px solid var(--color-background-primary-hover);
-  --border-card: 1px solid var(--color-border);
+  --border-card: 1px solid var(--color-border); */
 
   /* Shadows */
-  --shadow-elevated: 0 4px 16px rgb(15 47 79 / 0.08);
+  /* --shadow-elevated: 0 4px 16px rgb(15 47 79 / 0.08);
   --shadow-elevated-hover: 0 8px 24px rgb(15 47 79 / 0.14);
-  --shadow-card: 0 2px 8px rgb(15 47 79 / 0.06);
+  --shadow-card: 0 2px 8px rgb(15 47 79 / 0.06); */
 
   /* Motion */
-  --transition-fast: 160ms ease;
-  --transition-base: 220ms ease;
+  /* --transition-fast: 160ms ease;
+  --transition-base: 220ms ease; */
 
   /* Focus */
-  --focus-outline: 2px solid var(--color-background-primary);
+  /* --focus-outline: 2px solid var(--color-background-primary); */
 
   /* Opacity */
-  --opacity-disabled: 0.5;
+  /* --opacity-disabled: 0.5; */
 }
