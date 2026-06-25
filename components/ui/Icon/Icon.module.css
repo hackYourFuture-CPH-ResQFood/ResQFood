@@ -1,0 +1,89 @@
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-background-accent);
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+}
+
+/* Sizes */
+
+.sm {
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 2rem;
+}
+
+.md {
+  width: 5.6rem;
+  height: 5.6rem;
+  font-size: 3.2rem;
+}
+
+.lg {
+  width: 6.4rem;
+  height: 6.4rem;
+  font-size: 3.8rem;
+}
+
+.xlg {
+  width: 8rem;
+  height: 8rem;
+  font-size: 5.2rem;
+}
+
+/* Shapes */
+
+.circle {
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-background-page);
+  box-shadow: var(--shadow-card);
+}
+
+.square {
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-background-page);
+  box-shadow: var(--shadow-card);
+}
+
+.none {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Colors */
+
+.green {
+  color: var(--color-background-accent);
+}
+
+.darkGreen {
+  color: var(--color-text-success);
+}
+
+.black {
+  color: var(--color-text-primary);
+}
+
+.white {
+  color: var(--color-background-page);
+}
+
+/* Filled icons */
+
+.filled .icon {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.filled .icon circle {
+  fill: var(--color-background-page);
+  stroke: var(--color-background-page);
+}
