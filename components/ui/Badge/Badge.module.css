@@ -1,0 +1,49 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-full);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.sm {
+   min-height: 1rem;
+  font-size: var( --font-size-label-small);
+  font-weight: var(--font-weight-label-small);
+  padding: 0.3rem 0.8rem;
+}
+.md {
+  min-height: 1.3rem;
+  font-size: var(--font-size-title-medium);
+  font-weight: var(--font-weight-label-medium);
+  padding: 0.3rem 0.8rem;
+}
+
+.lg {
+  min-height: 1.6rem;
+  font-size: var(--font-size-label-large);
+  font-weight: var(--font-weight-label-large);
+  padding: 0.4rem 1rem;
+}
+
+/* State variants */
+.open {
+  background-color: var(--color-background-success);
+  color: var(--color-text-success);
+}
+.closed {
+  background-color: var(--color-background-error);
+  color: var(--color-text-error);
+  border: 1px solid var(--color-border-error);
+}
+.discount {
+  background-color: var(--color-background-accent);
+  color: var(--color-text-primary-inverse);
+}
+
+.deals {
+  background-color: var(--color-background-warn);
+  color: var(--color-text-primary);
+}
