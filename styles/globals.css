@@ -1,6 +1,7 @@
-@import "./theme/_default.css";
 @import "./base/_reset.css";
 @import "./base/_typography.css";
 @import "./base/_utilities.css";
 @import "./base/_animations.css";
 @import "./base/_keyframes.css";
+@import "./theme/_brands-styles.css";
+@import "./theme/_semantic-styles.css";
