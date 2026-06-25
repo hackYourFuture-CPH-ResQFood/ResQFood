@@ -1,0 +1,26 @@
+.storeAvatar {
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-primary);
+}
+
+/* Store brand colors */
+
+.netto {
+  background-color: var(--color-background-netto);
+  color: var(--color-text-primary);
+}
+
+.foetex {
+  background-color: var(--color-background-foetex);
+  color: var(--color-text-primary-inverse);
+}
+
+.bilka {
+  background-color: var(--color-background-bilka);
+  color: var(--color-text-primary-inverse);
+}
+
+.default {
+  background-color: var(--color-background-accent);
+  color: var(--color-text-primary-inverse);
+}
