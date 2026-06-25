@@ -1,17 +1,11 @@
 
 import Image from "next/image";
+import Badge from "../ui/Badge/Badge";
+import { getExpiryLabel, isExpired } from "@/utils/expiry";
 import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ offer, product }) {
-    function daysLeft() {
-        const end = new Date(offer.endTime);
-        const now = new Date();
-        // should I round up or down?
-        const diff = Math.ceil((end - now) / (1000 * 60 * 60 * 24));
-        return diff > 0 ? `${diff} day${diff === 1 ? '' : 's'} left` : "Ends today";
-    }
-
-    const isExpired = new Date(offer.endTime) < new Date();
+    const expired = isExpired(offer.endTime);
 
     return (
         <article className={styles.productCard}>
@@ -39,13 +33,12 @@ export default function ProductCard({ offer, product }) {
                 </p>
 
                 <div className={styles.expireAndDiscount}>
-                    <span className={isExpired ? styles.expired : styles.expiration}>
-                        {isExpired ? "Expired" : daysLeft()}
+                    <span className={expired ? styles.expired : styles.expiration}>
+                        {expired ? "Expired" : getExpiryLabel(offer.endTime)}
                     </span>
-                    {/* Discount badge will be replaced when badges be ready */}
-                    <span className={styles.discountBadge}>
+                    <Badge variant="deals" size="sm" className={styles.discountBadge}>
                         -{Math.round(offer.percentDiscount)}%
-                    </span>
+                    </Badge>
                 </div>
             </div>
         </article>
