@@ -1,7 +1,6 @@
 import styles from "./Logo.module.css";
-
+import { cn } from "@/utils/cn.js";
 //cn is a short helper to remove falsy from className parameters
-const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 function LogoMark() {
   // a heart shape with a leaf
