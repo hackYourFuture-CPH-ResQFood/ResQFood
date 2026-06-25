@@ -6,10 +6,9 @@ export default function ProductCard({ offer, product }) {
     function daysLeft() {
         const end = new Date(offer.endTime);
         const now = new Date();
+        // should I round up or down?
         const diff = Math.ceil((end - now) / (1000 * 60 * 60 * 24));
-        if (diff > 1) return `${diff} days left`;
-        if (diff === 1) return "1 day left";
-        return "Expires today";
+        return diff > 0 ? `${diff} day${diff === 1 ? '' : 's'} left` : "Ends today";
     }
 
     const isExpired = new Date(offer.endTime) < new Date();
@@ -43,6 +42,7 @@ export default function ProductCard({ offer, product }) {
                     <span className={isExpired ? styles.expired : styles.expiration}>
                         {isExpired ? "Expired" : daysLeft()}
                     </span>
+                    {/* Discount badge will be replaced when badges be ready */}
                     <span className={styles.discountBadge}>
                         -{Math.round(offer.percentDiscount)}%
                     </span>
