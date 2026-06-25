@@ -1,0 +1,152 @@
+html {
+  /* 1rem = 10px (62.5% of 16px default) */
+  font-size: 62.5%;
+}
+
+/* ---- scale DOWN ---- */
+
+/* tab-landscape: < 1200px  →  1rem = 9px */
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/* tab-portrait: < 900px  →  1rem = 8px */
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* phone: < 600px  →  keep 1rem = 8px (don't go lower or text gets too small) */
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* ---- scale UP ---- */
+
+/* big desktop: > 1800px  →  1rem = 12px */
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+:root {
+  /* ==================== COLORS ==================== */
+
+  /* Backgrounds */
+  --color-background-page: #ffffff;
+  --color-background-primary: #002747;
+  --color-background-secondary: #93c894;
+  --color-background-error: #f4dada;
+  --color-background-success: #dff5e7;
+  --color-background-accent: #42a866;
+  --color-background-warn: #f6f8af;
+
+  /* Text Colors */
+  --color-text-primary: #000000;
+  --color-text-primary-inverse: #ffffff;
+  --color-text-success: #14612f;
+  --color-text-error: #691212;
+  --color-text-muted: #706868;
+  --color-text-attention: #d58319;
+  --color-text-highlight: #14612f;
+
+  /* Borders */
+  --color-border-primary: #e1d6d6;
+  --color-border-error: #b3261e;
+  --color-border-success: #c0e5c1;
+
+  /* Badges */
+
+  /* ==================== TYPOGRAPHY ==================== */
+
+  /* Headline Large */
+  --font-family-headline-large: "Inter", sans-serif;
+  --font-size-headline-large: 3.2rem; /* 32px */
+  --line-height-headline-large: 4rem; /* 40px */
+  --font-weight-headline-large: 800; /* ExtraBold */
+
+  /* Headline Medium */
+  --font-family-headline-medium: "Inter", sans-serif;
+  --font-size-headline-medium: 2rem; /* 20px */
+  --line-height-headline-medium: 3.6rem; /* 36px */
+  --font-weight-headline-medium: 800; /* ExtraBold */
+
+  /* Headline Small */
+  --font-family-headline-small: "Inter", sans-serif;
+  --font-size-headline-small: 1.6rem; /* 16px */
+  --line-height-headline-small: 3.2rem; /* 32px */
+  --font-weight-headline-small: 600; /* SemiBold */
+
+  /* Title Large */
+  --font-family-title-large: "Inter", sans-serif;
+  --font-size-title-large: 1.4rem; /* 14px */
+  --font-weight-title-large: 500; /* Medium */
+
+  /* Title Medium */
+  --font-family-title-medium: "Inter", sans-serif;
+  --font-size-title-medium: 1.2rem; /* 12px */
+  --font-weight-title-medium: 500; /* Medium */
+
+  /* Label Large */
+  --font-family-label-large: "Inter", sans-serif;
+  --font-size-label-large: 1.5rem; /* 15px */
+  --line-height-label-large: 2rem; /* 20px */
+  --font-weight-label-large: 600; /* SemiBold */
+
+  /* Label Medium */
+  --font-family-label-medium: "Inter", sans-serif;
+  --font-size-label-medium: 1.1; /* 11px */
+  --font-weight-label-medium: 500; /* Medium */
+
+  /* Label Small */
+  --font-family-label-small: "Inter", sans-serif;
+  --font-size-label-small: 0.9rem; /* 9px */
+  --line-height-label-small: 0.9rem; /* 8px */
+  --font-weight-label-small: 500; /* Medium */
+  --font-weight-label-small-emphasized: 600; /* SemiBold */
+
+  /* Label Extra Small */
+  --font-family-label-extra-small: "Inter", sans-serif;
+  --font-size-label-extra-small: 0.6rem; /* 6px */
+  --font-weight-label-extra-small: 600; /* SemiBold */
+  --font-weight-label-extra-small-emphasized: 800; /* ExtraBold */
+
+  /* Body Large */
+  --font-family-body-large: "Inter", sans-serif;
+  --font-size-body-large: 1.5rem; /* 15px */
+  --line-height-body-large: 2.5rem; /* 25px */
+  --font-weight-body-large: 400; /* Regular */
+
+  /* Body Small */
+  --font-family-body-small: "Inter", sans-serif;
+  --font-size-body-small: 0.9rem; /* 9px */
+  --font-weight-body-small: 500; /* Medium */
+  --font-weight-body-small-emphasized: 600; /* SemiBold */
+
+  /* Disclaimer Small */
+  --font-family-disclaimer-small: "Inter", sans-serif;
+  --font-size-disclaimer-small: 1.2; /* 12px */
+  --line-height-disclaimer-small: 0.8rem; /* 8px */
+  --font-weight-disclaimer-small: 300; /* Light */
+
+  /* Shadows */
+  --shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  /* Border Radius */
+  --border-radius-large: 20px;
+  --border-radius-small: 15px;
+  --border-radius-full: 999px;
+
+  /* Motion */
+  --transition-fast: 160ms ease;
+  --transition-base: 220ms ease;
+
+  /* Opacity */
+  --opacity-disabled: 0.5;
+}
