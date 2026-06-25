@@ -2,94 +2,47 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xs);
-  font-family: var(--font-family-body);
-  font-weight: 600;
+  gap: var(--spacing-xs);//
+  font-family: var(--font-family-body);//
+  font-weight: var(--font-weight-semiBold);
+   border-radius: var(--border-radius-full); /* 30px / full pill */
   line-height: 1;
   white-space: nowrap;
+  line-height: var(--font-line-height-tight);//
 }
 
-/* Shapes */
-
-.pill {
-  border-radius: var(--border-radius-full);
-}
-
-.circle {
-  border-radius: var(--border-radius-full);
-  padding: 0;
-  aspect-ratio: 1 / 1;
-}
 
 /* Sizes */
 
-.sm {
-  min-height: 1.25rem;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: var(--font-size-xs);
-}
-
 .md {
-  min-height: 1.75rem;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: var(--font-size-sm);
+  min-height: 1.3rem;
+  padding: var(--spacing-xs) var(--spacing-sm);/*4 3 */
+  font-size: var(--font-size-sm);   font-size: 0.4rem;
 }
 
 .lg {
-  min-height: 2.25rem;
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-size: var(--font-size-md);
+  min-height: 1.6rem;
+  /* padding: var(--spacing-sm) var(--spacing-md);/*8 3  */
+  font-size: var(--font-size-md);//font-size: 0.5rem;
 }
 
-/* Circle size */
-
-.circle.sm {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.circle.md {
-  width: 2rem;
-  height: 2rem;
-}
-
-.circle.lg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-/* Fallback */
-
-.neutral {
-  background-color: var(--color-border);
-  color: var(--color-text-primary);
-}
 
 /* State variants */
-
-.deal {
-  background-color: var(--color-success-text);
-  color: var(--color-canvas);
+.open {
+  background-color: var(--background-success);
+  color: var(--color-font-accent);
 }
-
-.discount {
+.closed {
   background-color: var(--color-brand);
-  color: var(--color-white);
+  color: var(--text-error);
+}
+.discount {
+  background-color: var(--background-warn);//
+  color: var(--color-font-primary);//
 }
 
-/* Store brand variants */
-
-.bilka {
-  background-color: var(--color-bilka-background-primary);
-  color: var(--color-white);
+.deals {
+  background-color: var(--background-accent);
+  color: var(--backgrounds/primary);
 }
 
-.foetex {
-  background-color: var(--color-foetex-background-primary);
-  color: var(--color-white);
-}
-
-.netto {
-  background-color: var(--color-netto-background-primary);
-  color: var(--color-text-primary);
-}
