@@ -12,7 +12,7 @@ export default function Badge({
 
   return (
     <span
-      className={`${styles.badge} ${variantClass} ${sizeClass}  ${className}`}
+      className={`${styles.badge} ${variantClass} ${sizeClass} ${className}`}
       {...props}
     >
       {children}
