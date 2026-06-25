@@ -149,4 +149,24 @@ html {
 
   /* Opacity */
   --opacity-disabled: 0.5;
+
+  /* Spacing */
+  --spacing-2xs: 0.2rem;
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1.6rem;
+  --spacing-lg: 2.4rem;
+  --spacing-xl: 3.2rem;
+  --spacing-2xl: 4.8rem;
+
+  /*  Sizes */
+  --size-icon-xs: 1.2rem;
+  --size-icon-sm: 1.6rem;
+  --size-icon-md: 2.4rem;
+  --size-icon-lg: 3.2rem;
+  --size-icon-xl: 4rem;
+
+  --size-control-sm: 3.2rem;
+  --size-control-md: 4rem;
+  --size-control-lg: 4.8rem;
 }

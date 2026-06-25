@@ -1,23 +1,25 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* App Definition */
-  color: #8cc152; /* App Definition */
+  gap: var(--spacing-sm);
+  color: var(--color-background-secondary);
 }
 
 .mark {
-  width: 40px;
-  height: 38px;
+  width: var(--size-icon-xl);
+  height: auto;
   flex-shrink: 0;
 }
 
 .wordmark {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #ffffff;
+  font-family: var(--font-family-headline-medium);
+  font-size: var(--font-size-headline-medium);
+  line-height: var(--line-height-headline-medium);
+  font-weight: var(--font-weight-headline-medium);
+  letter-spacing: 0;
+  color: var(--color-text-primary-inverse);
 }
 
 .q {
-  color: var(--color-brand);
+  color: var(--color-background-secondary);
 }
