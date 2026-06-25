@@ -9,8 +9,8 @@
 
 /* Sizes */
 .sm {
-   min-height: 1rem;
-  font-size: var( --font-size-label-small);
+  min-height: 1rem;
+  font-size: var(--font-size-label-small);
   font-weight: var(--font-weight-label-small);
   padding: 0.3rem 0.8rem;
 }
