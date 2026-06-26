@@ -1,0 +1,65 @@
+.form {
+  width: 100%;
+  max-width: 40rem;
+}
+.label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 4.6rem;
+  padding: 0 1.5rem;
+
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-background-page);
+  box-shadow: var(--shadow-card);
+}
+
+.locationIcon {
+  font-size: 2rem;
+  color: var(--color-background-accent);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background-color: transparent;
+
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body-small);
+}
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
+.input:focus {
+  outline: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background-color: transparent;
+  color: var(--color-background-accent);
+  cursor: pointer;
+  padding: 0;
+}
+.searchIcon {
+  font-size: 2rem;
+  color: var(--color-background-accent);
+}
+
+.error {
+  color: #b42318;
+  font-size: var(--font-size-body-small);
+}
