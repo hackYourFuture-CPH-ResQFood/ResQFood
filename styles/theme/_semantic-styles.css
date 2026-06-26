@@ -101,7 +101,7 @@ html {
 
   /* Label Medium */
   --font-family-label-medium: "Inter", sans-serif;
-  --font-size-label-medium: 1.1; /* 11px */
+  --font-size-label-medium: 1.1rem; /* 11px */
   --font-weight-label-medium: 500; /* Medium */
 
   /* Label Small */
