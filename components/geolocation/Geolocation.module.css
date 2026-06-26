@@ -12,3 +12,9 @@
 .linkText:active {
   color: var(--color-text-attention);
 }
+
+.locationButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1);
+}

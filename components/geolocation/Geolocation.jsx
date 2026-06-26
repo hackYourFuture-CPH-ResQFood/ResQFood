@@ -3,15 +3,15 @@ import styles from "./Geolocation.module.css";
 import useGeolocation from "@/hooks/useGeolocation";
 import AnimatedTargetIcon from "./AnimatedTargetIcon";
 
-export function Geolocation({ setUserPosition }) {
-  const { getUserLocation } = useGeolocation();
+export function Geolocation({ setUserPosition, getError }) {
+  const { loading, getUserLocation } = useGeolocation();
 
   const awaitLocation = async () => {
     try {
       const response = await getUserLocation();
       setUserPosition(response);
     } catch (error) {
-      console.log(error);
+      getError(error.code);
     }
   };
 
@@ -20,9 +20,12 @@ export function Geolocation({ setUserPosition }) {
       <button
         className={`${styles.locationButton} location-trigger target-container u-flex-center`}
         onClick={awaitLocation}
+        disabled={loading}
       >
         <AnimatedTargetIcon size={32} />
-        <span className={styles.linkText}>Use my location instead</span>
+        <span className={styles.linkText}>
+          {loading ? "Getting your location" : "Use my location instead"}
+        </span>
       </button>
     </>
   );
