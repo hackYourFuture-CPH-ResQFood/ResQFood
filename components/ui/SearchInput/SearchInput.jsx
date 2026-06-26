@@ -5,34 +5,37 @@ import { MapPin, Search } from "lucide-react";
 import Icon from "@/components/ui/Icon/Icon";
 import styles from "./SearchInput.module.css";
 
-export default function SearchInput() {
+export default function SearchInput({ onSearch }) {
   const [areaCode, setAreaCode] = useState("");
   const [error, setError] = useState("");
 
   const validateAreaCode = (value) => {
-    const areaCodeRegex = /^\d{4,5}$/; // postcode in DK(4), in DE(5)
+  const areaCodeRegex = /^\d{4,5}$/;
 
-    if (!value.trim()) {
-      return "Area code is required";
-    }
+  if (!value.trim()) {
+    return "Area code is required";
+  }
 
-    if (!areaCodeRegex.test(value)) {
-      return "Please enter a valid area code";
-    }
+  if (!areaCodeRegex.test(value)) {
+    return "Please enter a valid area code";
+  }
 
-    return "";
-  };
+  return "";
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const validationError = validateAreaCode(areaCode);
-    setError(validationError);
+    const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (!validationError) {
-      console.log("Valid area code:", areaCode);
-    }
-  };
+  const validationError = validateAreaCode(areaCode);
+  setError(validationError);
+
+  if (!validationError) {
+    onSearch?.(areaCode);
+  }
+};
 
   const handleChange = (e) => {
     setAreaCode(e.target.value);
