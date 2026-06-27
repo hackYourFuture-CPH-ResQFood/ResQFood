@@ -90,11 +90,13 @@ html {
   --font-family-title-large: "Inter", sans-serif;
   --font-size-title-large: 1.4rem; /* 14px */
   --font-weight-title-large: 500; /* Medium */
+  --line-height-title-large: 2rem;
 
   /* Title Medium */
   --font-family-title-medium: "Inter", sans-serif;
   --font-size-title-medium: 1.2rem; /* 12px */
   --font-weight-title-medium: 500; /* Medium */
+  --line-height-title-medium: 1.6rem;
 
   /* Label Large */
   --font-family-label-large: "Inter", sans-serif;
@@ -106,6 +108,7 @@ html {
   --font-family-label-medium: "Inter", sans-serif;
   --font-size-label-medium: 1.1rem; /* 11px */
   --font-weight-label-medium: 500; /* Medium */
+  --line-height-label-medium: 1.6rem;
 
   /* Label Small */
   --font-family-label-small: "Inter", sans-serif;
@@ -125,29 +128,13 @@ html {
   --font-size-body-large: 1.5rem; /* 15px */
   --line-height-body-large: 2.5rem; /* 25px */
   --font-weight-body-large: 400; /* Regular */
+  --line-height-body-small: 1.4rem;
 
   /* Body Small */
   --font-family-body-small: "Inter", sans-serif;
   --font-size-body-small: 0.9rem; /* 9px */
   --font-weight-body-small: 500; /* Medium */
   --font-weight-body-small-emphasized: 600; /* SemiBold */
-
-  /* Disclaimer Small */
-  --font-family-disclaimer-small: "Inter", sans-serif;
-  --font-size-disclaimer-small: 1.2rem; /* 12px */
-  --line-height-disclaimer-small: 0.8rem; /* 8px */
-  --font-weight-disclaimer-small: 300; /* Light */
-
-  /* Price */
-  --font-family-price: "Inter", sans-serif;
-
-  --font-size-price-current: 1.6rem; /* 16px */
-  --line-height-price-current: 2rem; /* 20px */
-  --font-weight-price-current: 700;
-
-  --font-size-price-original: 1.2rem; /* 12px */
-  --line-height-price-original: 1.6rem; /* 16px */
-  --font-weight-price-original: 500;
 
   /* Shadows */
   --shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
