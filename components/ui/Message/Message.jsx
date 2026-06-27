@@ -1,45 +1,44 @@
-import { TriangleAlert } from "lucide-react";
+import { TriangleAlert, CircleCheck, InfoIcon, CircleAlert, } from "lucide-react";
 import Icon from "@/components/ui/Icon/Icon";
 import styles from "./Message.module.css";
-import { Logo } from "@/components/ui/Logo/Logo";
 
-export default function Message({ hasError = false }) {
-  if (hasError) {
+const messageConfig = {
+  error: {
+    icon: CircleAlert,
+    className: styles.error,
+  },
+  success: {
+    icon: CircleCheck,
+    className: styles.success,
+  },
+  warning: {
+    icon: TriangleAlert,
+    className: styles.warning,
+  },
+  info: {
+    icon: InfoIcon,
+    className: styles.info,
+  },
+};
+export default function Message({ 
+  type = "info",
+  children,
+ }) {
+   const config = messageConfig[type] || messageConfig.info;
+  const MessageIcon = config.icon;
+
     return (
-      <div className={styles.alert} role="alert">
-        <Icon
-          icon={TriangleAlert}
-          size="xs"
-          shape="none"
-          className={styles.alertIcon}
-        />
-        <p className={styles.alertText}>
-          Oops, something went wrong. If geolocation is not working, you may
-          need to give us permission to access your location in your browser.
-          Otherwise you can enter area code in the search box.
-        </p>
-      </div>
-    );
-  }
+      <div className={`${styles.message} ${config.className}`} role="alert">
+         <Icon
+        icon={MessageIcon}
+        size="xs"
+        shape="none"
+        className={styles.icon}
+      />
 
-  return (
-    <div className={styles.description}>
-      <p>
-        <Logo markOnly className={styles.logo} />
-        Salling Group and ResQFood have partnered to reduce food waste.
-      </p>
-
-      <p>
-        <Logo markOnly className={styles.logo} />
-        Every day, over 10,000 discounted food products are available in local
-        stores.
-      </p>
-
-      <p>
-        <Logo markOnly className={styles.logo} />
-        Find offers near you and help rescue perfectly good food before it goes
-        to waste.
-      </p>
+      <p className={styles.text}>{children}</p>
     </div>
   );
 }
+ 
+

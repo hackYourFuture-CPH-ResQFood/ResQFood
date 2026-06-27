@@ -40,7 +40,8 @@ html {
   /* Base colors */
   --color-white: #ffffff;
   --color-black: #000000;
-
+  --color-deep-red: #b3261e;
+ 
 
   /* Backgrounds */
   --color-background-page: var(--color-white);
@@ -50,7 +51,7 @@ html {
   --color-background-success: #dff5e7;
   --color-background-accent: #42a866;
   --color-background-warn: #f6f8af;
-
+--color-background-info: #cfe3f0;
   /* Text Colors */
   --color-text-primary: var(--color-black);
   --color-text-primary-inverse: var(--color-white);
@@ -59,11 +60,13 @@ html {
   --color-text-muted: #706868;
   --color-text-attention: #d58319;
   --color-text-highlight: #14612f;
+  
 
   /* Borders */
   --color-border-primary: #e1d6d6;
-  --color-border-error: #b3261e;
+  --color-border-error: var(--color-deep-red);
   --color-border-success: #c0e5c1;
+  --color-border-info:  #8bb8d6;
 
   /* Badges */
 
@@ -157,8 +160,8 @@ html {
   /* Icons */
   --color-icon-primary: var(--color-black);
   --color-icon-primary-inverse: var(--color-white);
-  --color-icon-accent: var(--color-background-accent);
-  --color-icon-alert: var(--color-border-error);
+  --color-icon-accent: var(--color-deep-red);
+ --color-icon-info: #002747;
   /* Avatar */
   --color-avatar-primary: var(--color-black);
   --color-avatar-primary-inverse: var(--color-white);
