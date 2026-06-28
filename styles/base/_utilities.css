@@ -1,42 +1,48 @@
 .u-container {
-	width: min(100% - 2rem, 1120px);
-	margin-inline: auto;
+  width: min(100% - 2rem, 1120px);
+  margin-inline: auto;
 }
 
 .u-surface {
-	border: var(--border-surface);
-	border-radius: var(--border-radius-md);
-	background: var(--color-surface);
+  border: var(--border-surface);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
 }
 
 .u-surface-elevated {
-	box-shadow: var(--shadow-elevated);
+  box-shadow: var(--shadow-elevated);
 }
 
 .u-text-primary {
-	color: var(--color-text-primary);
+  color: var(--color-text-primary);
 }
 
 .u-text-secondary {
-	color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
 }
 
 .u-text-success {
-	color: var(--color-success-text);
+  color: var(--color-success-text);
 }
 
 .u-text-error {
-	color: var(--color-error-text);
+  color: var(--color-error-text);
 }
 
 .u-visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	white-space: nowrap;
-	border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,0 +1,42 @@
+/* stroke animation for svg image used in geolocation */
+
+.target-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-text-success);
+}
+
+.target-center-dot,
+.target-outer-circle {
+  transform-origin: 100px 100px;
+}
+
+.location-trigger:active,
+.location-trigger:active .target-container {
+  color: var(--color-text-attention);
+}
+
+.target-crosshairs {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 0;
+}
+
+.target-center-dot,
+.target-outer-circle {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.target-container:hover .target-center-dot {
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.target-container:hover .target-crosshairs {
+  animation: drawOut 0.25s ease-out 0.15s backwards;
+}
+
+.target-container:hover .target-outer-circle {
+  animation: popIn 0.4s cubic-bezier(0.17, 0.89, 0.32, 1.2) 0.3s backwards;
+}
