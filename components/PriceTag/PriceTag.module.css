@@ -1,0 +1,19 @@
+.priceTag {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.originalPrice {
+  color: var(--color-text-muted);
+  font-family: var(--font-family-label-medium);
+  font-size: var(--font-size-label-medium);
+  font-weight: var(--font-weight-label-medium);
+  line-height: var(--line-height-label-medium);
+}
+.discountPrice {
+  color: var(--color-background-accent);
+  font-family: var(--font-family-label-medium);
+  font-size: var(--font-size-label-medium);
+  font-weight: var(--font-weight-label-small-emphasized);
+  line-height: var(--line-height-label-medium);
+}
