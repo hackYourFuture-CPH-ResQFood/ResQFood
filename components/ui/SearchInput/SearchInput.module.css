@@ -1,0 +1,53 @@
+.form {
+  width: 100%;
+  max-width: 20rem;
+}
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 4.6rem;
+  padding: 0 1.5rem;
+
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-background-page);
+  box-shadow: var(--shadow-card);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background-color: transparent;
+
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body-small);
+}
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
+.input:focus {
+  outline: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-accent);
+  cursor: pointer;
+  padding: 0;
+}
+.searchIcon {
+  color: var(--color-icon-success);
+}
+
+.error {
+  color: var(--color-text-error);
+  font-size: var(--font-size-body-small);
+}
