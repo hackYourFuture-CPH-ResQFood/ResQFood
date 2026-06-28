@@ -21,7 +21,13 @@ export default function SearchInput({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    onSearch?.(searchValue);
+    const searchTerm = searchValue.trim();
+
+    if (!searchTerm) {
+      return;
+    }
+
+    onSearch?.(searchTerm);
   };
 
   return (
