@@ -9,8 +9,12 @@ import styles from "./ProductDetailCard.module.css";
 
 export default function ProductDetailCard({ offer, product }) {
     const expired = isExpired(offer.endTime);
-        const topLevelCategory = product?.categories?.en?.split(">")?.[0]?.trim() || "Uncategorized";
-
+    const topLevelCategory = product?.categories?.en?.split(">")?.[0]?.trim() || "Uncategorized";
+    const stock = offer.stock;
+    const stockRange =
+        stock > 5 ? "more than 5 left" :
+        stock > 1 ? "1-5 left" :
+        "Out of Stock";
 
     return (
         <article className={styles.productCard}>
@@ -63,7 +67,7 @@ export default function ProductDetailCard({ offer, product }) {
                             className={styles.infoIcon}
                             style={{ color: "inherit" }}
                         />
-                        <span>{offer.stock} left*</span>
+                        <span>{stockRange}</span>
                     </p>
 
                 </div>
