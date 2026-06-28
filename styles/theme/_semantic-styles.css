@@ -40,6 +40,8 @@ html {
   /* Base colors */
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-deep-red: #b3261e;
+ 
 
   /* Backgrounds */
   --color-background-page: var(--color-white);
@@ -49,7 +51,7 @@ html {
   --color-background-success: #dff5e7;
   --color-background-accent: #42a866;
   --color-background-warn: #f6f8af;
-
+--color-background-info: #cfe3f0;
   /* Text Colors */
   --color-text-primary: var(--color-black);
   --color-text-primary-inverse: var(--color-white);
@@ -58,11 +60,13 @@ html {
   --color-text-muted: #706868;
   --color-text-attention: #d58319;
   --color-text-highlight: #14612f;
+  
 
   /* Borders */
   --color-border-primary: #e1d6d6;
-  --color-border-error: #b3261e;
+  --color-border-error: var(--color-deep-red);
   --color-border-success: #c0e5c1;
+  --color-border-info:  #8bb8d6;
 
   /* Badges */
 
@@ -90,11 +94,13 @@ html {
   --font-family-title-large: "Inter", sans-serif;
   --font-size-title-large: 1.4rem; /* 14px */
   --font-weight-title-large: 500; /* Medium */
+  --line-height-title-large: 2rem;
 
   /* Title Medium */
   --font-family-title-medium: "Inter", sans-serif;
   --font-size-title-medium: 1.2rem; /* 12px */
   --font-weight-title-medium: 500; /* Medium */
+  --line-height-title-medium: 1.6rem;
 
   /* Label Large */
   --font-family-label-large: "Inter", sans-serif;
@@ -106,6 +112,7 @@ html {
   --font-family-label-medium: "Inter", sans-serif;
   --font-size-label-medium: 1.1rem; /* 11px */
   --font-weight-label-medium: 500; /* Medium */
+  --line-height-label-medium: 1.6rem;
 
   /* Label Small */
   --font-family-label-small: "Inter", sans-serif;
@@ -125,18 +132,13 @@ html {
   --font-size-body-large: 1.5rem; /* 15px */
   --line-height-body-large: 2.5rem; /* 25px */
   --font-weight-body-large: 400; /* Regular */
+  --line-height-body-small: 1.4rem;
 
   /* Body Small */
   --font-family-body-small: "Inter", sans-serif;
   --font-size-body-small: 0.9rem; /* 9px */
   --font-weight-body-small: 500; /* Medium */
   --font-weight-body-small-emphasized: 600; /* SemiBold */
-
-  /* Disclaimer Small */
-  --font-family-disclaimer-small: "Inter", sans-serif;
-  --font-size-disclaimer-small: 1.2rem; /* 12px */
-  --line-height-disclaimer-small: 0.8rem; /* 8px */
-  --font-weight-disclaimer-small: 300; /* Light */
 
   /* Shadows */
   --shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -153,11 +155,30 @@ html {
   /* Opacity */
   --opacity-disabled: 0.5;
 
+  /* Spacing */
+  --spacing-2xs: 0.2rem;
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1.6rem;
+  --spacing-lg: 2.4rem;
+  --spacing-xl: 3.2rem;
+  --spacing-2xl: 4.8rem;
+
+  /*  Sizes */
+  --size-icon-xs: 1.2rem;
+  --size-icon-sm: 1.6rem;
+  --size-icon-md: 2.4rem;
+  --size-icon-lg: 3.2rem;
+  --size-icon-xl: 4rem;
+
+  --size-control-sm: 3.2rem;
+  --size-control-md: 4rem;
+  --size-control-lg: 4.8rem;
   /* Icons */
   --color-icon-primary: var(--color-black);
   --color-icon-primary-inverse: var(--color-white);
-  --color-icon-accent: var(--color-background-accent);
-
+  --color-icon-accent: var(--color-deep-red);
+ --color-icon-info: #002747;
   /* Avatar */
   --color-avatar-primary: var(--color-black);
   --color-avatar-primary-inverse: var(--color-white);

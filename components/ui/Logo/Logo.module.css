@@ -1,0 +1,25 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-background-secondary);
+}
+
+.mark {
+  width: var(--size-icon-xl);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-family: var(--font-family-headline-medium);
+  font-size: var(--font-size-headline-medium);
+  line-height: var(--line-height-headline-medium);
+  font-weight: var(--font-weight-headline-medium);
+  letter-spacing: 0;
+  color: var(--color-text-primary-inverse);
+}
+
+.q {
+  color: var(--color-background-secondary);
+}

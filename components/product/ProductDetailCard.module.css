@@ -1,0 +1,132 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 20rem;
+  line-height: 1.5;
+}
+
+.imageWrapper {
+  position: relative;
+  width: min(100%, clamp(12rem, 50vw, 20rem));
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-large);
+}
+
+.productImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  object-position: center;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  font-weight: var(--font-weight-label-small-emphasized);
+  font-family: var(--font-family-label-small);
+  font-size: var(--font-size-label-small);
+  letter-spacing: 0.1rem;
+  z-index: 101;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0;
+}
+
+.productName {
+  font-size: var(--font-size-label-large);
+  font-weight: var(--font-weight-label-large);
+  font-family: var(--font-family-label-large);
+  color: var(--color-text-primary);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.productCategory {
+  font-size: var(--font-size-title-medium);
+  font-weight: var(--font-weight-title-medium);
+  font-family: var(--font-family-title-medium);
+  color: var(--color-text-muted);
+}
+
+.productPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.newPrice {
+  font-size: var(--font-size-label-medium);
+  font-weight: var(--font-weight-label-small-emphasized);
+  color: var(--color-background-accent);
+  font-family: var(--font-family-label-medium);
+}
+
+.originalPrice {
+  font-size: var(--font-size-label-medium);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-label-medium);
+  text-decoration: line-through;
+}
+
+.expireAndStock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding-right: 1.5rem;
+  font-size: var(--font-size-title-medium);
+  font-weight: var(--font-weight-title-medium);
+  font-family: var(--font-family-title-medium);
+}
+
+.expiration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+.expired {
+    display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-error);
+}
+
+.infoIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-flex;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.stockAmount {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-background-accent);
+  font-weight: var(--font-weight-label-large);
+}
+
+.disclaimer {
+  font-size: var(--font-size-label-small);
+  color: var(--color-text-attention);
+  font-family: var(--font-family-label-small);
+  margin-top: 2rem;
+}
