@@ -39,7 +39,7 @@
 
   border: none;
   background-color: transparent;
-  color: var(--color-background-accent);
+  color: var(--color-text-accent);
   cursor: pointer;
   padding: 0;
 }

@@ -5,13 +5,7 @@ import { Search } from "lucide-react";
 import Icon from "@/components/ui/Icon/Icon";
 import styles from "./SearchInput.module.css";
 
-export default function SearchInput({
-  onSearch,
-  placeholder = "Search",
-  maxLength,
-  inputMode = "text",
-  error = "",
-}) {
+export default function SearchInput({ onSearch, error = "", ...props }) {
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (e) => {
@@ -20,13 +14,7 @@ export default function SearchInput({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const searchTerm = searchValue.trim();
-
-    if (!searchTerm) {
-      return;
-    }
-
     onSearch?.(searchTerm);
   };
 
@@ -37,14 +25,11 @@ export default function SearchInput({
           id="searchInput"
           className={styles.input}
           type="text"
-          aria-label={placeholder}
-          placeholder={placeholder}
-          inputMode={inputMode}
-          maxLength={maxLength}
           aria-invalid={!!error}
           aria-describedby={error ? "searchInputError" : undefined}
           value={searchValue}
           onChange={handleChange}
+          {...props}
         />
 
         <button className={styles.button} type="submit" aria-label="Search">
