@@ -49,6 +49,8 @@ html {
   --color-background-success: #dff5e7;
   --color-background-accent: #42a866;
   --color-background-warn: #f6f8af;
+  --color-background-attention: #d58319;
+  --color-background-error-strong: #b3261e;
 
   /* Text Colors */
   --color-text-primary: var(--color-black);
