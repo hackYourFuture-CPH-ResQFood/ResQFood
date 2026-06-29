@@ -33,9 +33,9 @@ function LogoMark() {
   );
 }
 
-export function Logo({ markOnly = false, className = "" }) {
+export function Logo({ markOnly = false, size = "md", className = "" }) {
   return (
-    <span className={cn(styles.logo, className)}>
+    <span className={cn(styles.logo, styles[size], className)}>
       <LogoMark />
       {!markOnly && (
         <span className={styles.wordmark}>
