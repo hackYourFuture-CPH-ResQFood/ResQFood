@@ -60,6 +60,8 @@ html {
   --color-text-muted: #706868;
   --color-text-attention: #d58319;
   --color-text-highlight: #14612f;
+  --color-text-salling: #002747;
+  --color-text-accent:#42a866;
   
 
   /* Borders */
@@ -179,7 +181,7 @@ html {
   --color-icon-primary-inverse: var(--color-white);
   --color-icon-accent: var(--color-deep-red);
  --color-icon-info: #002747;
-  --color-icon-success :#14612f;
+ --color-icon-success :#14612f;
   /* Avatar */
   --color-avatar-primary: var(--color-black);
   --color-avatar-primary-inverse: var(--color-white);

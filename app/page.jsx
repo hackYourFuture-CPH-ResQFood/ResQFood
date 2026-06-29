@@ -1,7 +1,8 @@
+import FrontpageBanner from "@/components/FrontpageBanner/FrontpageBanner";
 export default function Home() {
   return (
     <div>
-      <h1>ResQFood</h1>
+      <FrontpageBanner />
     </div>
   );
 }
