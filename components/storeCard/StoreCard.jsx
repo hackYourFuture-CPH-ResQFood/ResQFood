@@ -4,14 +4,20 @@ import Icon from "../ui/Icon/Icon";
 import { Route } from "lucide-react";
 import Badge from "../ui/Badge/Badge";
 
-export default function StoreCard({ store, variant = "flat" }) {
-  const { name, storeID, address, distance, openHours, status, deals } = store;
-
+export default function StoreCard({
+  name,
+  id,
+  address,
+  distance,
+  openHours,
+  status,
+  variant = "flat",
+}) {
   return (
     <>
       <div className={`${styles.storeCard} ${styles[variant]}`}>
         <div className={styles.storeDetails}>
-          <StoreAvatar brand={storeID} size="md" />
+          <StoreAvatar brand={id} size="md" />
         </div>
         <div className={styles.storeInfo}>
           <p className={styles.storeName}>{name}</p>
