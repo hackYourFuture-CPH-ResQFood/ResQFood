@@ -4,23 +4,14 @@ import Icon from "../ui/Icon/Icon";
 import { Route } from "lucide-react";
 import Badge from "../ui/Badge/Badge";
 
-export default function StoreCard({ store }) {
-  const {
-    name,
-    storeID,
-    address,
-    distance,
-    statusText,
-    statusCssClass,
-    offers,
-    hasBorder = false,
-  } = store;
+export default function StoreCard({ store, variant = "flat" }) {
+  const { name, storeID, address, distance, openHours, status, deals } = store;
 
   return (
     <>
-      <div className={`${styles.storeCard} ${hasBorder ? styles.border : ""}`}>
+      <div className={`${styles.storeCard} ${styles[variant]}`}>
         <div className={styles.storeDetails}>
-          <StoreAvatar brand={storeID} size={"md"} />
+          <StoreAvatar brand={storeID} size="md" />
         </div>
         <div className={styles.storeInfo}>
           <p className={styles.storeName}>{name}</p>
@@ -28,7 +19,7 @@ export default function StoreCard({ store }) {
             <p className={styles.storeAddress}>{address}</p>
 
             {distance && (
-              <div className={`${styles.distance} u-flex-center`}>
+              <div className={`${styles.distance}`}>
                 <Icon
                   icon={Route}
                   label="distance"
@@ -41,16 +32,16 @@ export default function StoreCard({ store }) {
             )}
           </div>
           <div className={styles.workingDetails}>
-            <div className={`${styles.circle} ${styles[statusCssClass]}`}></div>
-            <p className={styles.openHours}>{statusText}</p>
+            <div className={`${styles.circle} ${styles[status]}`}></div>
+            <p className={styles.openHours}>{openHours}</p>
           </div>
         </div>
         <div className={styles.offerDetails}>
           <Badge className="deals" variant="deals" size="lg">
             <div className={styles.offerContainer}>
-              <p className={styles.offers}>{offers}</p>
+              <p className={styles.offers}>{deals}</p>
               <p className={styles.offersText}>
-                {offers === 1 ? "deal" : "deals"}
+                {deals === 1 ? "deal" : "deals"}
               </p>
             </div>
           </Badge>
