@@ -1,3 +1,4 @@
+"use client";
 import { Store } from "lucide-react";
 import Icon from "@/components/ui/Icon/Icon";
 import styles from "./StoreAvatar.module.css";

@@ -1,0 +1,107 @@
+.storeCard {
+  display: grid;
+  grid-template-columns: 5rem 1fr max-content;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+.flat {
+  border: none;
+  box-shadow: none;
+}
+
+.bordered {
+  box-shadow: var(--shadow-card);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--color-border-primary);
+}
+
+.storeDetails {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.storeName {
+  font-size: var(--font-size-headline-medium);
+  font-weight: var(--font-weight-headline-medium);
+}
+
+.storeAddress {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-body-large);
+}
+
+.distance,
+.location {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.distance {
+  gap: 0.2rem;
+}
+
+.distanceInfo {
+  color: var(--color-text-muted);
+}
+.location {
+  gap: 1.5rem;
+}
+
+.workingDetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.storeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.circle {
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: var(--border-radius-full);
+}
+
+.open {
+  background-color: var(--color-background-accent);
+}
+
+.closed {
+  background-color: var(--color-background-error-strong);
+}
+
+.warning {
+  background-color: var(--color-background-attention);
+}
+
+.offerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offers,
+.offersText {
+  color: var(--color-text-primary-inverse);
+}
+
+.offersText {
+  padding: 0.2rem 1rem;
+  font-size: var(--font-size-label-medium);
+  font-weight: var(--font-weight-label-medium);
+}
+
+@media (min-width: 768px) {
+  .storeCard {
+    max-width: 55rem;
+    margin-left: 5rem;
+  }
+}
