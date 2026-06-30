@@ -5,7 +5,12 @@ import styles from "./ProductGrid.module.css";
 import ProductCard from "../product/ProductCard";
 import Skeleton from "@/components/ui/Skeleton/Skeleton";
 
-export default function ProductGrid({ data, loading, error, emptyMessage }) {
+export default function ProductGrid({
+  clearances,
+  loading,
+  error,
+  emptyMessage,
+}) {
   if (error) {
     return (
       <p className={styles.emptyMessage}>
@@ -29,7 +34,7 @@ export default function ProductGrid({ data, loading, error, emptyMessage }) {
     );
   }
 
-  if (!data || data.length === 0) {
+  if (!clearances || clearances.length === 0) {
     return (
       <p className={styles.emptyMessage}>
         {emptyMessage || "No deals right now. Check back later."}
@@ -38,17 +43,13 @@ export default function ProductGrid({ data, loading, error, emptyMessage }) {
   }
   return (
     <div className={styles.ProductGrid}>
-      {data?.map((foodwaste) => {
-        return foodwaste?.clearances?.map((clearance) => {
-          return (
-            <ProductCard
-              key={`${foodwaste.store.id}-${clearance.offer.ean}`}
-              product={clearance.product}
-              offer={clearance.offer}
-            />
-          );
-        });
-      })}
+      {clearances?.map((clearance) => (
+        <ProductCard
+          key={clearance.offer.ean}
+          product={clearance.product}
+          offer={clearance.offer}
+        />
+      ))}
     </div>
   );
 }
