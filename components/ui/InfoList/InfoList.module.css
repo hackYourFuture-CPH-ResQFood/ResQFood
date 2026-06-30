@@ -1,0 +1,26 @@
+.logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-icon-success);
+  margin: 0;
+  transform: translateY(0.3rem);
+}
+
+
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+}
+
+.list p {
+  display: flex;
+  align-items: flex-start;
+  color: var(--color-text-muted);
+  gap: var(--spacing-xs);
+  margin: 0;
+}
+

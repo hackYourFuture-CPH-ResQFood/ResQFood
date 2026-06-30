@@ -13,6 +13,12 @@
 
 /* Sizes */
 
+.xs {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
 .sm {
   width: 3.2rem;
   height: 3.2rem;
@@ -74,6 +80,10 @@
 
 .white {
   color: var(--color-icon-primary-inverse);
+}
+
+.red {
+  color: var(--color-background-error-strong);
 }
 
 /* Filled icons */
