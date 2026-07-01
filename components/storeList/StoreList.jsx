@@ -4,6 +4,7 @@ import StoreCard from "../storeCard/StoreCard";
 import dataFormatter from "./dataFormatter.helper";
 import ProductCard from "../product/ProductCard";
 import Carousel from "../ui/Carousel/Carousel";
+import Link from "next/link";
 
 export default function StoreList({ data }) {
   if (!data) return <p>Loading stores...</p>;
@@ -15,27 +16,35 @@ export default function StoreList({ data }) {
         return (
           <>
             <div
+              key={item.store.id}
               className={`${styles.blockStore} will-be-StoreBlock-component`}
             >
-              <StoreCard
-                key={item.store.id}
-                name={formattedStore.name}
-                id={formattedStore.brand}
-                address={formattedStore.address}
-                distance={formattedStore.distance}
-                openHours={formattedStore.workingHours.openHours}
-                status={formattedStore.workingHours.status}
-                deals={deals}
-                variant="flat"
-              />
+              <Link
+                className={styles.link}
+                href={`/storeDetailPage/${item.store.id}`}
+              >
+                <StoreCard
+                  name={formattedStore.name}
+                  id={formattedStore.brand}
+                  address={formattedStore.address}
+                  distance={formattedStore.distance}
+                  openHours={formattedStore.workingHours.openHours}
+                  status={formattedStore.workingHours.status}
+                  deals={deals}
+                  variant="flat"
+                />
+              </Link>
               <div className={styles.divider}></div>
               <Carousel className={styles.productCarousel}>
                 {item.clearances.map((deal) => (
-                  <ProductCard
-                    key={deal.offer.ean}
-                    offer={deal.offer}
-                    product={deal.product}
-                  />
+                  <div key={deal.offer.ean}>
+                    <Link
+                      className={styles.link}
+                      href={`/storeDetailPage/${deal.offer.ean}`}
+                    >
+                      <ProductCard offer={deal.offer} product={deal.product} />
+                    </Link>
+                  </div>
                 ))}
               </Carousel>
             </div>
