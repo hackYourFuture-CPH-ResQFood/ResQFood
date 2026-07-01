@@ -6,6 +6,7 @@ import Image from "next/image";
 import Badge from "../ui/Badge/Badge";
 import { getExpiryLabel, isExpired } from "@/utils/expiry";
 import styles from "./ProductCard.module.css";
+import fallbackImage from "./assets/heart.png";
 
 export default function ProductCard({ offer, product }) {
     const expired = isExpired(offer.endTime);
@@ -26,12 +27,21 @@ export default function ProductCard({ offer, product }) {
         <article className={styles.productCard}>
             <div className={styles.imageWrapper}>
                 {showImageFallback ? (
-                    <div className={styles.imageFallback} aria-hidden="true" />
+                    <div className={styles.imageFallback} aria-hidden="true">
+                        <Image
+                            className={styles.productImage}
+                            src={fallbackImage}
+                            alt="ResQFood"
+                            width={400}
+                            height={400}
+                            unoptimized
+                        />
+                    </div>
                 ) : (
                     <Image
                         className={styles.productImage}
                         src={product.image}
-                        alt={product.description || "Product image"}
+                        alt={product.description || "ResQFood"}
                         width={400}
                         height={400}
                         unoptimized
