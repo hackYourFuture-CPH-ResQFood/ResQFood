@@ -18,7 +18,7 @@ export default function StoreList({ data }) {
             <div key={item.store.id} className={`${styles.storeBlock}`}>
               <Link
                 className={styles.link}
-                href={`/storeDetailPage/${item.store.id}`}
+                href={`/storeDetailPage?sid=${item.store.id}`}
               >
                 <StoreCard
                   name={formattedStore.name}
@@ -37,7 +37,7 @@ export default function StoreList({ data }) {
                   <div key={deal.offer.ean}>
                     <Link
                       className={styles.link}
-                      href={`/storeDetailPage/${deal.offer.ean}`}
+                      href={`/productDetailPage?sid=${item.store.id}&pid=${deal.offer.ean}`}
                     >
                       <ProductCard offer={deal.offer} product={deal.product} />
                     </Link>
