@@ -7,12 +7,18 @@
   padding: 1.5rem 2rem;
 }
 
-.flat {
+.storesPage {
   border: none;
   box-shadow: none;
+  cursor: pointer;
 }
 
-.bordered {
+.storesPage:hover {
+  transform: scale(1.05);
+}
+
+.detailPage,
+.storesPage:hover {
   box-shadow: var(--shadow-card);
   border-radius: var(--border-radius-large);
   border: 1px solid var(--color-border-primary);
