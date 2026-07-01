@@ -3,6 +3,7 @@ import styles from "./StoreList.module.css";
 import StoreCard from "../storeCard/StoreCard";
 import dataFormatter from "./dataFormatter.helper";
 import ProductCard from "../product/ProductCard";
+import Carousel from "../ui/Carousel/Carousel";
 
 export default function StoreList({ data }) {
   if (!data) return <p>Loading stores...</p>;
@@ -25,7 +26,7 @@ export default function StoreList({ data }) {
                 deals={deals}
                 variant="flat"
               />
-              <div
+              <Carousel
                 className={`${styles.productCarousel} will-be-Carousel-component`}
               >
                 {item.clearances.map((deal) => (
@@ -35,7 +36,7 @@ export default function StoreList({ data }) {
                     product={deal.product}
                   />
                 ))}
-              </div>
+              </Carousel>
             </div>
           </>
         );
