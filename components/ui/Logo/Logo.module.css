@@ -7,16 +7,44 @@
 }
 
 .mark {
-  width: var(--size-icon-xl);
   height: auto;
   flex-shrink: 0;
 }
 
-.wordmark {
+.sm .mark {
+  width: var(--size-icon-sm);
+}
+
+.md .mark {
+  width: var(--size-icon-md);
+}
+
+.lg .mark {
+  width: var(--size-icon-lg);
+}
+
+.sm .wordmark {
+  font-family: var(--font-family-title-medium);
+  font-size: var(--font-size-title-medium);
+  line-height: var(--line-height-title-medium);
+  font-weight: var(--font-weight-title-medium);
+}
+
+.md .wordmark {
+  font-family: var(--font-family-headline-small);
+  font-size: var(--font-size-headline-small);
+  line-height: var(--line-height-headline-small);
+  font-weight: var(--font-weight-headline-small);
+}
+
+.lg .wordmark {
   font-family: var(--font-family-headline-medium);
   font-size: var(--font-size-headline-medium);
   line-height: var(--line-height-headline-medium);
   font-weight: var(--font-weight-headline-medium);
+}
+
+.wordmark {
   letter-spacing: 0;
   color: var(--color-text-primary-inverse);
 }
