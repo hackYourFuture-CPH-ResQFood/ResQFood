@@ -1,4 +1,7 @@
 
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Badge from "../ui/Badge/Badge";
 import { getExpiryLabel, isExpired } from "@/utils/expiry";
@@ -6,18 +9,35 @@ import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ offer, product }) {
     const expired = isExpired(offer.endTime);
+    const [failedImageKey, setFailedImageKey] = useState(null);
+
+    const imageKey =
+        typeof product?.image === "string"
+            ? product.image.trim()
+            : product?.image?.src || "";
+
+    const hasImageSrc =
+        (typeof product?.image === "string" && product.image.trim().length > 0) ||
+        (typeof product?.image === "object" && product?.image?.src);
+
+    const showImageFallback = !hasImageSrc || failedImageKey === imageKey;
 
     return (
         <article className={styles.productCard}>
             <div className={styles.imageWrapper}>
-                <Image
-                    className={styles.productImage}
-                    src={product.image}
-                    alt={product.description}
-                    width={400}
-                    height={400}
-                    unoptimized
-                />
+                {showImageFallback ? (
+                    <div className={styles.imageFallback} aria-hidden="true" />
+                ) : (
+                    <Image
+                        className={styles.productImage}
+                        src={product.image}
+                        alt={product.description || "Product image"}
+                        width={400}
+                        height={400}
+                        unoptimized
+                        onError={() => setFailedImageKey(imageKey)}
+                    />
+                )}
             </div>
 
             <div className={styles.cardBody}>
