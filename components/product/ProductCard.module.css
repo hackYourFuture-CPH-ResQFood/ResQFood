@@ -8,6 +8,7 @@
   box-shadow: var(--shadow-card);
   background-color: var(--color-background-page);
   overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .imageWrapper {
@@ -20,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-background-secondary);
+  background: var(--color-background-page);
 }
 
 .productImage {
@@ -28,6 +29,21 @@
   height: 100% !important;
   object-fit: contain;
   object-position: center;
+  transition: transform 400ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .productCard:hover,
+  .productCard:focus-within {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    cursor: pointer;
+  }
+
+  .productCard:hover .productImage,
+  .productCard:focus-within .productImage {
+    transform: scale(1.02);
+  }
 }
 
 .cardBody {
@@ -92,9 +108,11 @@
   flex-shrink: 0;
   background: var(--color-background-warn);
   font-size: var(--font-size-label-small);
-  font-weight: var(--font-weight-label-small);
+  font-weight: var(--font-weight-label-large);
   line-height: 1;
   padding: 0.25rem 0.5rem;
   border-radius: var(--border-radius-full);
   white-space: nowrap;
+  color: var(--color-text-primary);
+  letter-spacing: var(--spacing-sm);
 }
