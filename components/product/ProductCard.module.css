@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-background-secondary);
+  background: var(--color-background-page);
 }
 
 .productImage {
@@ -36,7 +36,7 @@
   .productCard:hover,
   .productCard:focus-within {
     transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-hover);
     cursor: pointer;
   }
 
@@ -114,5 +114,5 @@
   border-radius: var(--border-radius-full);
   white-space: nowrap;
   color: var(--color-text-primary);
-  letter-spacing: 0.7px;
+  letter-spacing: var(--spacing-sm);
 }

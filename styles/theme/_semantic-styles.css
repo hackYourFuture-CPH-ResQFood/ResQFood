@@ -145,6 +145,7 @@ html {
 
   /* Shadows */
   --shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.2);
 
   /* Border Radius */
   --border-radius-large: 20px;
