@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import FrontpageBanner from "@/components/FrontpageBanner/FrontpageBanner";
 import InfoList from "@/components/ui/InfoList/InfoList";
@@ -10,7 +11,57 @@ import { Geolocation } from "@/components/geolocation/Geolocation";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const router = useRouter();
   const [locationError, setLocationError] = useState(null);
+  const [searchError, setSearchError] = useState("");
+
+  // temporary route to mock store. will be fixed after store page added
+  const buildStoresUrl = (params) => {
+    const searchParams = new URLSearchParams(params);
+    return `/stores?${searchParams.toString()}`;
+  };
+
+  const goToStoresBySearch = (searchTerm) => {
+    const zip = searchTerm.trim();
+
+    if (!zip) {
+      setSearchError("Please enter a zip code.");
+      return;
+    }
+
+    if (!/^\d{4,5}$/.test(zip)) {
+      setSearchError("Zip code must be 4 or 5 digits.");
+      return;
+    }
+
+    setSearchError("");
+    setLocationError(null);
+
+  // temporary route to mock store. will be fixed after store page added
+    router.push(buildStoresUrl({ zip, source: "search" }));
+  };
+
+  const goToStoresByLocation = (position) => {
+    const latitude = Number(position?.latitude);
+    const longitude = Number(position?.longitude);
+
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+      setLocationError("invalid_position");
+      return;
+    }
+
+    setLocationError(null);
+    setSearchError("");
+
+      // temporary route to mock store. will be fixed after store page added
+    router.push(
+      buildStoresUrl({
+        lat: String(latitude),
+        lng: String(longitude),
+        source: "geolocation",
+      }),
+    );
+  };
 
   const handleLocationError = (errorCode) => {
     setLocationError(errorCode);
@@ -24,6 +75,8 @@ export default function Home() {
         return "We could not determine your location right now. Please try again.";
       case 3:
         return "Location request timed out. Please try again.";
+      case "invalid_position":
+        return "Location data is invalid. Please try again.";
       default:
         return "We could not access your location. Please try again.";
     }
@@ -43,17 +96,16 @@ export default function Home() {
       </div>
       <div className={styles.section}>
         <SearchInput
-          onSearch={(searchTerm) => {
-            console.log("Search term:", searchTerm);
-          }}
+          onSearch={goToStoresBySearch}
+          error={searchError}
+          placeholder="Enter zip code (4 - 5 digits)"
+          inputMode="numeric"
+          maxLength={5}
         />
       </div>
       <div className={styles.section}>
         <Geolocation
-          setUserPosition={(position) => {
-            setLocationError(null);
-            console.log("User position:", position);
-          }}
+          setUserPosition={goToStoresByLocation}
           getError={handleLocationError}
         />
       </div>
