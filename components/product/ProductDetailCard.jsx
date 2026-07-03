@@ -1,4 +1,7 @@
 
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Badge from "../ui/Badge/Badge";
 import Icon from "../ui/Icon/Icon";
@@ -6,9 +9,12 @@ import { Clock} from "lucide-react";
 import { Package } from 'lucide-react'
 import { getExpiryLabel, isExpired } from "@/utils/expiry";
 import styles from "./ProductDetailCard.module.css";
+import fallbackImage from "./assets/heart.png";
 
 export default function ProductDetailCard({ offer, product }) {
     const expired = isExpired(offer.endTime);
+    const [imageError, setImageError] = useState(false);
+    const showImageFallback = imageError || !product?.image;
     const topLevelCategory = product?.categories?.en?.split(">")?.[0]?.trim() || "Uncategorized";
     const stock = offer.stock;
     const stockRange =
@@ -19,14 +25,26 @@ export default function ProductDetailCard({ offer, product }) {
     return (
         <article className={styles.productCard}>
             <div className={styles.imageWrapper}>
-                <Image
-                    className={styles.productImage}
-                    src={product.image}
-                    alt={product.description}
-                    width={400}
-                    height={400}
-                    unoptimized
-                />
+                {showImageFallback ? (
+                    <Image
+                        className={styles.productImage}
+                        src={fallbackImage}
+                        alt="ResQFood"
+                        width={400}
+                        height={400}
+                        unoptimized
+                    />
+                ) : (
+                    <Image
+                        className={styles.productImage}
+                        src={product.image}
+                        alt={product.description || "ResQFood"}
+                        width={400}
+                        height={400}
+                        unoptimized
+                        onError={() => setImageError(true)}
+                    />
+                )}
 
                 <Badge variant="deals" size="sm" className={styles.discountBadge}>
                     -{Math.round(offer.percentDiscount)}%
