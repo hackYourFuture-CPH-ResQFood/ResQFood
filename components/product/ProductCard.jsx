@@ -10,18 +10,8 @@ import fallbackImage from "./assets/heart.png";
 
 export default function ProductCard({ offer, product }) {
     const expired = isExpired(offer.endTime);
-    const [failedImageKey, setFailedImageKey] = useState(null);
-
-    const imageKey =
-        typeof product?.image === "string"
-            ? product.image.trim()
-            : product?.image?.src || "";
-
-    const hasImageSrc =
-        (typeof product?.image === "string" && product.image.trim().length > 0) ||
-        (typeof product?.image === "object" && product?.image?.src);
-
-    const showImageFallback = !hasImageSrc || failedImageKey === imageKey;
+    const [imageError, setImageError] = useState(false);
+    const showImageFallback = imageError || !product?.image;
 
     return (
         <article className={styles.productCard}>
@@ -45,7 +35,7 @@ export default function ProductCard({ offer, product }) {
                         width={400}
                         height={400}
                         unoptimized
-                        onError={() => setFailedImageKey(imageKey)}
+                        onError={() => setImageError(true)}
                     />
                 )}
             </div>
