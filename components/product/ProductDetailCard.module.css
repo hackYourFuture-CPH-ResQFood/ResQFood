@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-background-secondary);
+  background: var(--color-background-page);
   border-radius: var(--border-radius-large);
 }
 
