@@ -22,7 +22,7 @@ export default function ProductDetailCard({ offer, product }) {
                 <FallbackImage
                     className={styles.productImage}
                     src={product.image}
-                    alt={product.description || "ResQFood"}
+                    alt={product.description}
                     width={400}
                     height={400}
                     unoptimized
