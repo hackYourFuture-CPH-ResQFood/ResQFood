@@ -1,24 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Filter from "@/components/ui/Filter/Filter";
+import Filter from "@/components/filter/Filter";
 import ProductCard from "@/components/product/ProductCard";
 
 export default function ProductFilter({ products = [] }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const getMainCategoryDa = (item) => {
-    return item.product?.categories?.da?.split(">")[0]?.trim() || "Ukategoriseret";
-  };
-
-  const getMainCategoryEn = (item) => {
-    return item.product?.categories?.en?.split(">")[0]?.trim() || "Uncategorized";
-  };
-
-  const getCategoryValue = (item) => {
-    return `${getMainCategoryDa(item)}|${getMainCategoryEn(item)}`;
-  };
-
+  
   const categories = [
     ...new Map(
       products.map((item) => {
