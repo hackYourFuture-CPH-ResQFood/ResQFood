@@ -1,11 +1,11 @@
 .message {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: var(--spacing-md);
 
   width: 100%;
   max-width: 30rem;
-  padding: 2rem 3rem;
+  padding:  var(--spacing-lg) var(--spacing-xl);
 
   border-radius: var(--border-radius-large);
   border: 1px solid;

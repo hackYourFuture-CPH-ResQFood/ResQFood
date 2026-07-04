@@ -148,8 +148,10 @@ html {
   --shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.2);
 
   /* Border Radius */
-  --border-radius-large: 20px;
+
   --border-radius-small: 15px;
+  --border-radius-medium: 18px;
+  --border-radius-large: 20px;
   --border-radius-full: 999px;
 
   /* Motion */
