@@ -2,41 +2,27 @@
 import StoreCard from "@/components/storeCard/StoreCard";
 import ProductDetailCard from "@/components/product/ProductDetailCard";
 import styles from "./page.module.css";
-
-const offer = {
-  endTime: "2026-07-01T21:00:00",
-  stock: 5,
-  newPrice: 12,
-  originalPrice: 24,
-  currency: "DKK",
-  percentDiscount: 50,
-};
-
-const product = {
-  image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73",
-  description: "Sourdough bread",
-  categories: {
-    en: "Bread And Cakes > Bread",
-  },
-};
+import foodWaste from "@/app/mockData/foodWaste";
 
 export default function ProductDetailPage() {
+    const storeResult = foodWaste[0];
+  const clearance = storeResult.clearances[0];
   return (
       <main className={styles.page}>
           <div className={styles.content}>
                <div className={styles.storeWrapper}>
-        <StoreCard
-          id="netto"
-          name="Netto"
-          address="Ingerslevs Boulevard 3B"
-          openHours="Closing 21:00"
-          status="open"
-          deals={8}
-          variant="bordered"
-                  />
+      <StoreCard
+            id={storeResult.store.id}
+            name={storeResult.store.name}
+            address={storeResult.store.address.street}
+            openHours="Closing 21:00"
+            status="open"
+            deals={storeResult.clearances.length}
+            variant="bordered"
+          />
                   </div>
               <div className={styles.productWrapper}>
-        <ProductDetailCard offer={offer} product={product} />
+        <ProductDetailCard offer={clearance.offer} product={clearance.product} />
               </div>
                </div>
     </main>
