@@ -14,3 +14,12 @@ export const getCategoryValue = (item) => {
 export const getCategoryLabel = (item) => {
   return `${getMainCategoryDa(item)} / ${getMainCategoryEn(item)}`;
 };
+export const getUniqueByValue = (items) => {
+  return items.filter((item, index) => {
+    const firstIndex = items.findIndex((otherItem) => {
+      return otherItem.value === item.value;
+    });
+
+    return firstIndex === index;
+  });
+};
