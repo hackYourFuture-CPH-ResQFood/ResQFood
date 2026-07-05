@@ -1,3 +1,10 @@
+.geolocationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .linkText {
   color: var(--color-text-success);
   font-size: var(--font-size-label-large);

@@ -1,6 +1,5 @@
-import Header from "@/components/layout/header/Header";
+import PageHeader from "@/components/layout/PageHeader/PageHeader";
 import Footer from "@/components/layout/footer/Footer";
-import styles from "./layout.module.css";
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -12,8 +11,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className={styles.siteMain}>{children}</main>
+        <PageHeader />
+        {children}
         <Footer />
       </body>
     </html>

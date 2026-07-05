@@ -16,7 +16,7 @@ export function Geolocation({ setUserPosition, getError }) {
   };
 
   return (
-    <>
+    <div className={styles.geolocationWrapper}>
       <button
         className={`${styles.locationButton} location-trigger target-container u-flex-center`}
         onClick={awaitLocation}
@@ -27,6 +27,6 @@ export function Geolocation({ setUserPosition, getError }) {
           {loading ? "Getting your location" : "Use my location instead"}
         </span>
       </button>
-    </>
+    </div>
   );
 }
