@@ -46,3 +46,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.storeList-heading {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-headline-medium);
+  font-size: var(--font-size-headline-medium);
+  line-height: var(--line-height-headline-medium);
+  font-weight: var(--font-weight-headline-medium);
+}
