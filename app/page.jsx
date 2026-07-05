@@ -9,7 +9,7 @@ import Message from "@/components/ui/Message/Message";
 import SearchInput from "@/components/ui/SearchInput/SearchInput";
 import { Geolocation } from "@/components/geolocation/Geolocation";
 import InfoSteps from "@/components/infoSteps/InfoSteps";
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
 
 export default function Home() {
   const router = useRouter();
@@ -81,18 +81,18 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.landingPage}>
-      <div className={styles.section}>
+    <div>
+      <section>
         <FrontpageBanner />
-      </div>
-      <div className={styles.section}>
+      </section>
+      <section>
         {locationError ? (
           <Message type="error">{getLocationErrorMessage(locationError)}</Message>
         ) : (
           <InfoList />
         )}
-      </div>
-      <div className={styles.section}>
+      </section>
+      <section>
         <SearchInput
           onSearch={goToStoresBySearch}
           error={searchError}
@@ -100,16 +100,16 @@ export default function Home() {
           inputMode="numeric"
           maxLength={5}
         />
-      </div>
-      <div className={styles.section}>
+      </section>
+      <section>
         <Geolocation
           setUserPosition={goToStoresByLocation}
           getError={handleLocationError}
         />
-      </div>
-      <div className={styles.section}>
+      </section>
+      <section>
         <InfoSteps />
-      </div>
+      </section>
     </div>
   );
 }

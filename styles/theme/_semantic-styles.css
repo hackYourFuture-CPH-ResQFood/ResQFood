@@ -190,3 +190,7 @@ html {
   --color-avatar-primary: var(--color-black);
   --color-avatar-primary-inverse: var(--color-white);
 }
+
+section {
+  padding: 4rem 2rem;
+}
