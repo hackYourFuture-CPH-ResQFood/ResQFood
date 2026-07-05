@@ -54,3 +54,11 @@
   line-height: var(--line-height-headline-medium);
   font-weight: var(--font-weight-headline-medium);
 }
+
+.storeList-subHeading {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-headline-small);
+  font-size: var(--font-size-headline-small);
+  line-height: var(--line-height-headline-small);
+  font-weight: var(--font-weight-headline-small);
+}
