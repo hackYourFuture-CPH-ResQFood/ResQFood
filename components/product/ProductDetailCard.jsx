@@ -1,7 +1,7 @@
 
-import Image from "next/image";
 import Badge from "../ui/Badge/Badge";
 import Icon from "../ui/Icon/Icon";
+import FallbackImage from "../fallback-image/FallbackImage";
 import { Clock} from "lucide-react";
 import { Package } from 'lucide-react'
 import { getExpiryLabel, isExpired } from "@/utils/expiry";
@@ -19,7 +19,7 @@ export default function ProductDetailCard({ offer, product }) {
     return (
         <article className={styles.productCard}>
             <div className={styles.imageWrapper}>
-                <Image
+                <FallbackImage
                     className={styles.productImage}
                     src={product.image}
                     alt={product.description}

@@ -114,5 +114,4 @@
   border-radius: var(--border-radius-full);
   white-space: nowrap;
   color: var(--color-text-primary);
-  letter-spacing: var(--spacing-sm);
 }
