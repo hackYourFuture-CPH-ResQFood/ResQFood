@@ -1,6 +1,6 @@
 import StoreCard from "@/components/storeCard/StoreCard";
 import ProductGrid from "@/components/ProductGrid/ProductGrid";
-import { getFoodWasteByStoreId } from "@/services/storesService";
+import { getFoodWasteByStoreId } from "@/services/foodWasteService";
 import BackLink from "@/components/ui/BackLink/BackLink";
 import styles from "./page.module.css";
 
