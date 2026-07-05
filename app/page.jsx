@@ -16,7 +16,6 @@ export default function Home() {
   const [locationError, setLocationError] = useState(null);
   const [searchError, setSearchError] = useState("");
 
-  // temporary route to mock store. will be fixed after store page added
   const buildStoresUrl = (params) => {
     const searchParams = new URLSearchParams(params);
     return `/stores?${searchParams.toString()}`;
@@ -38,7 +37,6 @@ export default function Home() {
     setSearchError("");
     setLocationError(null);
 
-  // temporary route to mock store. will be fixed after store page added
     router.push(buildStoresUrl({ zip, source: "search" }));
   };
 
@@ -54,7 +52,6 @@ export default function Home() {
     setLocationError(null);
     setSearchError("");
 
-      // temporary route to mock store. will be fixed after store page added
     router.push(
       buildStoresUrl({
         lat: String(latitude),
