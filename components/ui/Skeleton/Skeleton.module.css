@@ -1,14 +1,14 @@
 .skeleton {
   display: block;
   overflow: hidden;
-  background-color: var(--color-surface-muted);
+  background-color: var(--color-background-info);
   background-image: linear-gradient(
     to right,
-    var(--color-surface-muted) 0%,
-    var(--color-surface-muted) 35%,
-    var(--color-canvas) 50%,
-    var(--color-surface-muted) 65%,
-    var(--color-surface-muted) 100%
+    var(--color-background-info) 0%,
+    var(--color-background-info) 35%,
+    var(--color-background-page) 50%,
+    var(--color-background-info) 65%,
+    var(--color-background-info) 100%
   );
   background-size: 200% 100%;
   background-position: -100% 0;
@@ -17,15 +17,15 @@
 /* Radius */
 
 .radiusSm {
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-small);
 }
 
 .radiusMd {
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-medium);
 }
 
 .radiusLg {
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-large);
 }
 
 .radiusFull {

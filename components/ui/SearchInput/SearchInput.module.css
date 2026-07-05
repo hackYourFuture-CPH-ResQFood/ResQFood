@@ -26,7 +26,7 @@
   font-size: var(--font-size-body-small);
 }
 .input::placeholder {
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
 }
 .input:focus {
   outline: none;

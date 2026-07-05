@@ -1,6 +1,6 @@
 .storeCard {
   display: grid;
-  grid-template-columns: 5rem 1fr max-content;
+  grid-template-columns: 6rem 1fr max-content;
   justify-content: start;
   align-items: center;
   gap: 2rem;
@@ -12,7 +12,12 @@
   box-shadow: none;
 }
 
-.bordered {
+.storeCard:hover {
+  transform: scale(1.05);
+}
+
+.bordered,
+.storeCard:hover {
   box-shadow: var(--shadow-card);
   border-radius: var(--border-radius-large);
   border: 1px solid var(--color-border-primary);
@@ -78,7 +83,7 @@
   background-color: var(--color-background-error-strong);
 }
 
-.warning {
+.closingSoon {
   background-color: var(--color-background-attention);
 }
 
@@ -103,5 +108,6 @@
   .storeCard {
     max-width: 55rem;
     margin-left: 5rem;
+    min-width: 50rem;
   }
 }

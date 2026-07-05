@@ -11,6 +11,7 @@ export default function StoreCard({
   distance,
   openHours,
   status,
+  deals,
   variant = "flat",
 }) {
   return (
