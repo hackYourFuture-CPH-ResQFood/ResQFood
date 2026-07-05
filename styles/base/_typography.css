@@ -1,6 +1,5 @@
 body {
 	color: var(--color-text-primary);
-	background: var(--color-canvas);
 	font-family: var(--font-family-body);
 	font-size: var(--font-size-body);
 	line-height: var(--font-leading-body);

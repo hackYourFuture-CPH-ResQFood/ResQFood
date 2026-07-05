@@ -1,4 +1,4 @@
-import { Logo } from "../Logo/Logo";
+import { Logo } from "@/components/ui/Logo/Logo";
 import styles from "./PageHeader.module.css";
 
 /**
@@ -6,8 +6,8 @@ import styles from "./PageHeader.module.css";
  */
 export default function PageHeader({ back }) {
   return (
-    <header className={styles.header}>
+    <div className={styles.header}>
       <Logo />
-    </header>
+    </div>
   );
 }
