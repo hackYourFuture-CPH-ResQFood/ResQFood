@@ -1,3 +1,4 @@
+import { AppWindowIcon } from "lucide-react";
 import { ApiError } from "./ApiError";
 import { apiClient } from "./client";
 
@@ -42,3 +43,27 @@ export async function getFoodWasteByZip(zip) {
   const path = `${endpoint}?${query}`;
   return apiClient(path);
 }
+
+export async function getProductByStoreAndEan(storeId, ean) {
+  if (storeId == null) {
+    throw new ApiError("Store  is not found", {
+      status: 0,
+      details: "MISSING_STORE",
+    });
+  }
+
+  if (ean == null) {
+    throw new ApiError("Product is not found", {
+      status: 0,
+      details: "MISSING_PRODUCT",
+    });
+  }
+
+  const storeResult = await getFoodWasteByStoreId(storeId);
+
+  const clearances = storeResult.clearances.filter(product)
+  const filteredProduct = clearances.filter(product => product.ean === product.ean);
+   return filteredProduct.product
+
+}
+
