@@ -1,6 +1,6 @@
 
-import Image from "next/image";
 import Badge from "../ui/Badge/Badge";
+import FallbackImage from "../fallback-image/FallbackImage";
 import { getExpiryLabel, isExpired } from "@/utils/expiry";
 import styles from "./ProductCard.module.css";
 
@@ -10,7 +10,7 @@ export default function ProductCard({ offer, product }) {
     return (
         <article className={styles.productCard}>
             <div className={styles.imageWrapper}>
-                <Image
+                <FallbackImage
                     className={styles.productImage}
                     src={product.image}
                     alt={product.description}
