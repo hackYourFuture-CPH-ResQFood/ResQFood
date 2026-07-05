@@ -24,6 +24,7 @@ export default async function Stores({ searchParams }) {
       <p className="storeList-heading">
         Showing stores {areaCode ? `for ${areaCode}` : `near you`}
       </p>
+      <p className="storeList-subHeading">{storeData.length} stores found</p>
       <StoreList data={storeData} />
       {/* remove this component and put the logic here instead*/}
     </>
