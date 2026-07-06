@@ -88,7 +88,7 @@ export default function StoreList({ data = [] }) {
                   <div key={deal.offer.ean}>
                     <Link
                       className={styles.link}
-                      href={`/productDetailPage?sid=${item.store.id}&pid=${deal.offer.ean}`}
+                     href={`/stores/${item.store.id}/product/${deal.offer.ean}`}
                     >
                       <ProductCard offer={deal.offer} product={deal.product} />
                     </Link>
