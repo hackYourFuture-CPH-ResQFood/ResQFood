@@ -1,4 +1,3 @@
-import { AppWindowIcon } from "lucide-react";
 import { ApiError } from "./ApiError";
 import { apiClient } from "./client";
 import data from "../app/mockData/foodWaste";
@@ -13,9 +12,6 @@ function queryBuilder(params) {
 const useRealData = process.env.USE_REAL_DATA === "true";
 
 export async function getFoodWasteByStoreId(id) {
-  if (useRealData === false) {
-    return data;
-  }
   if (id == null)
     throw new ApiError("Store id is required", {
       status: 0,
@@ -57,36 +53,33 @@ export async function getFoodWasteByZip(zip) {
 }
 
 export async function getProductByStoreAndEan(id, ean) {
-  if (storeId == null) {
-    throw new ApiError("Store  is not found", {
-      status: 0,
+  if (id == null) {
+    throw new ApiError("Store is not found", {
+      status: 404,
       details: "MISSING_STORE",
     });
   }
 
   if (ean == null) {
     throw new ApiError("Product is not found", {
-      status: 0,
+      status: 404,
       details: "MISSING_PRODUCT",
     });
   }
 
   const storeResult = await getFoodWasteByStoreId(id);
-  const allProductsInStore = storeResult.clearances;
 
-  const selectedProduct = allProductsInStore.find((item) => {
-    const productEan = String(item.offer.ean);
-    const selectedEan = String(ean);
-
-    return productEan === selectedEan;
+  const selectedProduct = storeResult.clearances.find((item) => {
+    return String(item.offer.ean) === String(ean);
   });
 
   if (!selectedProduct) {
     throw new ApiError("Product is not found in the store", {
-      status: 0,
+      status: 404,
       details: "MISSING_PRODUCT_IN_STORE",
     });
   }
+
   return {
     store: storeResult.store,
     offer: selectedProduct.offer,

@@ -15,7 +15,7 @@ export default function StoreList({ data }) {
         const deals = item.clearances.length;
         return (
           <div key={item.store.id} className={`${styles.storeBlock}`}>
-            <Link className={styles.link} href={`/store/${item.store.id}`}>
+            <Link className={styles.link} href={`/stores/${item.store.id}`}>
               <StoreCard
                 name={formattedStore.name}
                 id={formattedStore.brand}
@@ -33,7 +33,7 @@ export default function StoreList({ data }) {
                 <div key={deal.offer.ean}>
                   <Link
                     className={styles.link}
-                    href={`/store/${item.store.id}/product/${deal.offer.ean}`}
+                    href={`/stores/${item.store.id}/product/${deal.offer.ean}`}
                   >
                     <ProductCard offer={deal.offer} product={deal.product} />
                   </Link>
