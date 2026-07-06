@@ -12,6 +12,9 @@ function queryBuilder(params) {
 const useRealData = process.env.USE_REAL_DATA === "true";
 
 export async function getFoodWasteByStoreId(id) {
+    if (useRealData === false) {
+    return data;
+  }
   if (id == null)
     throw new ApiError("Store id is required", {
       status: 0,
@@ -55,14 +58,14 @@ export async function getFoodWasteByZip(zip) {
 export async function getProductByStoreAndEan(id, ean) {
   if (id == null) {
     throw new ApiError("Store is not found", {
-      status: 404,
+      status: 0,
       details: "MISSING_STORE",
     });
   }
 
   if (ean == null) {
     throw new ApiError("Product is not found", {
-      status: 404,
+      status: 0,
       details: "MISSING_PRODUCT",
     });
   }

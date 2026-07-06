@@ -41,9 +41,9 @@ export default async function ProductDetailPage({ params }) {
           />
         </div>
 
-        <div>
+        <section>
           <ProductDetailCard offer={offer} product={product} />
-        </div>
+        </section>
       </div>
     </main>
   );
