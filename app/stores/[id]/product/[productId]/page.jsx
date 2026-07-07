@@ -3,7 +3,7 @@ import StoreCard from "@/components/storeCard/StoreCard";
 import ProductDetailCard from "@/components/product/ProductDetailCard";
 import { getProductByStoreAndEan } from "@/services/foodWasteService";
 import dataFormatter from "@/components/storeList/dataFormatter.helper";
-import BackButton from "@/components/ui/Button/BackButton/BackButton";
+import BackLink from "@/components/ui/BackLink/BackLink";
 
 export default async function ProductDetailPage({ params }) {
   const { id, productId } = await params;
@@ -26,7 +26,7 @@ export default async function ProductDetailPage({ params }) {
   return (
     <main>
       <div>
-        <BackButton/>
+        <BackLink />
       </div>
       <div>
         <div>
