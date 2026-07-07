@@ -12,8 +12,8 @@ function queryBuilder(params) {
 const useRealData = process.env.USE_REAL_DATA === "true";
 
 export async function getFoodWasteByStoreId(id) {
-    if (useRealData === false) {
-    return data;
+  if (useRealData === false) {
+    return data.find((item) => item.store.id === id);
   }
   if (id == null)
     throw new ApiError("Store id is required", {
@@ -87,5 +87,5 @@ export async function getProductByStoreAndEan(id, ean) {
     store: storeResult.store,
     offer: selectedProduct.offer,
     product: selectedProduct.product,
-     };
+  };
 }
