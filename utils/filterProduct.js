@@ -4,6 +4,8 @@ import {
   getUniqueByValue,
 } from "@/utils/productCategory";
 
+export const ALL_CATEGORIES = "All";
+
 export function getProductCategories(products = []) {
   const categories = products.map((item) => {
     const value = getCategoryValue(item);
@@ -17,7 +19,7 @@ export function getProductCategories(products = []) {
 
 export function filterProductsByCategory(products = [], selectedCategory) {
   const filteredProducts =
-    selectedCategory === "All"
+    selectedCategory === ALL_CATEGORIES
       ? products
       : products.filter((item) => getCategoryValue(item) === selectedCategory);
 

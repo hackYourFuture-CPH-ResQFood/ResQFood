@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./StoreList.module.css";
 import StoreCard from "../storeCard/StoreCard";
 import dataFormatter from "./dataFormatter.helper";
@@ -8,17 +7,14 @@ import ProductCard from "../product/ProductCard";
 import Carousel from "../ui/Carousel/Carousel";
 import Link from "next/link";
 import Filter from "@/components/filter/Filter";
-import {
-  filterProductsByCategory,
-  getProductCategories,
-} from "@/utils/filterProduct";
+import { filterProductsByCategory } from "@/utils/filterProduct";
+import useCategoryFilter from "@/hooks/useCategoryFilter";
 
 export default function StoreList({ data = [] }) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
   const allProducts = data.flatMap((storeResult) => storeResult.clearances);
 
-  const uniqueCategories = getProductCategories(allProducts);
+  const { selectedCategory, setSelectedCategory, categories } =
+    useCategoryFilter(allProducts);
 
   const filteredStores = data
     .map((storeResult) => {
@@ -39,7 +35,7 @@ export default function StoreList({ data = [] }) {
       <Filter
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
-        categories={uniqueCategories}
+        categories={categories}
       />
 
       <p>

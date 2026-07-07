@@ -1,17 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Filter from "@/components/filter/Filter";
 import ProductGrid from "@/components/ProductGrid/ProductGrid";
-import {
-  filterProductsByCategory,
-  getProductCategories,
-} from "@/utils/filterProduct";
+import useCategoryFilter from "@/hooks/useCategoryFilter";
+import { filterProductsByCategory } from "@/utils/filterProduct";
 
 export default function ProductSection({ clearances = [], storeId }) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const uniqueCategories = getProductCategories(clearances);
+  const { selectedCategory, setSelectedCategory, categories } =
+    useCategoryFilter(clearances);
 
   const filteredClearances = filterProductsByCategory(
     clearances,
@@ -23,7 +19,7 @@ export default function ProductSection({ clearances = [], storeId }) {
       <Filter
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
-        categories={uniqueCategories}
+        categories={categories}
       />
 
       <ProductGrid clearances={filteredClearances} storeId={storeId} />
