@@ -16,23 +16,23 @@ import {
 export default function StoreList({ data = [] }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
- const allProducts = data.flatMap((storeResult) => storeResult.clearances);
+  const allProducts = data.flatMap((storeResult) => storeResult.clearances);
 
-const uniqueCategories = getProductCategories(allProducts);
+  const uniqueCategories = getProductCategories(allProducts);
 
-const filteredStores = data
-  .map((storeResult) => {
-    const filteredClearances = filterProductsByCategory(
-      storeResult.clearances,
-      selectedCategory
-    );
+  const filteredStores = data
+    .map((storeResult) => {
+      const filteredClearances = filterProductsByCategory(
+        storeResult.clearances,
+        selectedCategory,
+      );
 
-    return {
-      ...storeResult,
-      clearances: filteredClearances,
-    };
-  })
-  .filter((storeResult) => storeResult.clearances.length > 0);
+      return {
+        ...storeResult,
+        clearances: filteredClearances,
+      };
+    })
+    .filter((storeResult) => storeResult.clearances.length > 0);
 
   return (
     <>
@@ -78,7 +78,7 @@ const filteredStores = data
                   <div key={deal.offer.ean}>
                     <Link
                       className={styles.link}
-                     href={`/stores/${item.store.id}/product/${deal.offer.ean}`}
+                      href={`/stores/${item.store.id}/product/${deal.offer.ean}`}
                     >
                       <ProductCard offer={deal.offer} product={deal.product} />
                     </Link>

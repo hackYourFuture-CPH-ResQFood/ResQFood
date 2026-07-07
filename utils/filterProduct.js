@@ -19,9 +19,7 @@ export function filterProductsByCategory(products = [], selectedCategory) {
   const filteredProducts =
     selectedCategory === "All"
       ? products
-      : products.filter(
-          (item) => getCategoryValue(item) === selectedCategory
-        );
+      : products.filter((item) => getCategoryValue(item) === selectedCategory);
 
   return filteredProducts;
 }

@@ -11,7 +11,7 @@ import {
 export default function ProductSection({ clearances = [], storeId }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const uniqueCategories =  getProductCategories(clearances);
+  const uniqueCategories = getProductCategories(clearances);
 
   const filteredClearances = filterProductsByCategory(
     clearances,
