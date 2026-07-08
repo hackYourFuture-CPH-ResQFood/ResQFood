@@ -42,8 +42,8 @@ export default async function StoreDetailsPage({ params }) {
             deals={storeData.clearances.length}
             variant="flat"
           />
-        </div>
-        <ProductSection clearances={storeData.clearances ?? []} />
+         </div>
+        <ProductSection clearances={storeData.clearances ?? []} storeId={id} />
       </div>
     </main>
   );

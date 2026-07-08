@@ -21,7 +21,7 @@
   border: none;
   /* background-color: transparent; */
   color: var(--color-text-primary);
-  font-size: var(--font-size-body-medium);
+  font-size: var(--font-size-body-large);
 }
 .input::placeholder {
   color: var(--color-text-muted);

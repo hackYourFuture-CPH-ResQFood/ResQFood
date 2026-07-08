@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./ProductGrid.module.css";
-
+import Link from "next/link";
 import ProductCard from "../product/ProductCard";
 import Skeleton from "@/components/ui/Skeleton/Skeleton";
 
@@ -9,6 +9,7 @@ export default function ProductGrid({
   clearances,
   loading,
   error,
+  storeId,
   emptyMessage,
 }) {
   if (error) {
@@ -44,11 +45,17 @@ export default function ProductGrid({
   return (
     <div className={styles.ProductGrid}>
       {clearances?.map((clearance) => (
-        <ProductCard
-          key={clearance.offer.ean}
-          product={clearance.product}
-          offer={clearance.offer}
-        />
+        <Link
+          key={clearance.product.ean}
+          href={`/stores/${storeId}/product/${clearance.offer.ean}`}
+          className={styles.productLink}
+        >
+          <ProductCard
+            key={clearance.offer.ean}
+            product={clearance.product}
+            offer={clearance.offer}
+          />
+        </Link>
       ))}
     </div>
   );
