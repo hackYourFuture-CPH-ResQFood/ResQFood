@@ -1,33 +1,46 @@
 :root {
 	/* --page-max-width: 120rem; */
 	--page-gap: clamp(1.6rem, 2.4vw, 3.2rem);
+	--cta-control-width: min(100%, 28rem);
 }
 
 body {
 	background-color: var(--color-background-page);
+	background-image:
+		radial-gradient(circle at 14% 12%, rgba(118, 181, 122, 0.3), transparent 42%),
+		linear-gradient(135deg, #f6fbf3 0%, #eef7ea 46%, #e6f2e2 100%);
 }
 
 main {
-	width: min(100%, 50rem);
-	margin-inline: auto;
-    margin: 2rem auto;
-    border: 1px solid var(--color-border-primary);
-    border-radius: var(--border-radius-small);
-    box-shadow: var(--shadow-card);
-    	min-height: 100vh;
-	padding: 3rem 1rem 1.5rem;
+	/* width: min(100% - 2.4rem, 104rem); */
+	margin: 2rem;
+	border: 1px solid var(--color-border-primary);
+	border-radius: var(--border-radius-medium);
+	box-shadow: var(--shadow-card);
+	min-height: calc(100vh - 10rem);
+	padding: 0.8rem;
+	background: linear-gradient(145deg, #e7f8fa 0%, #e7f0fa 52%, #f7f6fa  100%);
+}
 
+.mainPageContainer {
+	width: min(100%, 50rem);
+	margin: 0 auto;
 }
 
 section {
 	scroll-margin-top: 8rem;
-    margin: var(--spacing-sm) auto;
+	width: 100%;
+	margin: var(--spacing-lg) 0;
 }
-
-
 
 @media (min-width: 480px) {
 	main {
-		padding: 3rem 2rem 2rem;
+		padding: 2rem 1rem 1.6rem;
+	}
+}
+
+@media (min-width: 768px) {
+	main {
+		padding: 3rem 1.2rem 2rem;
 	}
 }

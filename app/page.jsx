@@ -81,6 +81,7 @@ export default function Home() {
 
   return (
     <main>
+      <div className="mainPageContainer">
       <section>
         <FrontpageBanner />
       </section>
@@ -109,6 +110,7 @@ export default function Home() {
       <section>
         <InfoSteps />
       </section>
+      </div>
     </main>
   );
 }

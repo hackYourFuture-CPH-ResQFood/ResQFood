@@ -137,6 +137,13 @@ html {
   --font-weight-body-large: 400; /* Regular */
   --line-height-body-small: 1.4rem;
 
+  /* Body Medium */
+  --font-family-body-medium: "Inter", sans-serif;
+  --font-size-body-medium: 1.2rem; /* 12px */
+  --line-height-body-medium: 2rem; /* 20px */
+  --font-weight-body-medium: 500; /* Medium */
+  --line-height-body-small: 1.4rem;
+
   /* Body Small */
   --font-family-body-small: "Inter", sans-serif;
   --font-size-body-small: 0.9rem; /* 9px */

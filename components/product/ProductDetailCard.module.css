@@ -33,6 +33,8 @@
   top: 2rem;
   right: 2rem;
   padding: 0.5rem;
+  background-color: var(--color-background-warn);
+  color: var(--color-text-primary);
   font-weight: var(--font-weight-label-small-emphasized);
   font-family: var(--font-family-label-small);
   font-size: var(--font-size-label-small);
