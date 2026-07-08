@@ -31,7 +31,6 @@ export default async function StoreDetailsPage({ params }) {
         <div className={styles.topBar}>
           <BackLink />
         </div>
-
         <StoreCard
           name={formattedStore.name}
           id={formattedStore.brand}
@@ -42,7 +41,7 @@ export default async function StoreDetailsPage({ params }) {
           deals={storeData.clearances.length}
           variant="flat"
         />
-        <ProductSection clearances={storeData.clearances ?? []} />
+        <ProductSection clearances={storeData.clearances ?? []} storeId={id} />
       </div>
     </main>
   );

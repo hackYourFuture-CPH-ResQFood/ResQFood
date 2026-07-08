@@ -23,7 +23,7 @@
   background-color: transparent;
 
   color: var(--color-text-primary);
-  font-size: var(--font-size-body-small);
+  font-size: var(--font-size-body-large);
 }
 .input::placeholder {
   color: var(--color-text-muted);
