@@ -25,7 +25,5 @@ export function getStatus(isClosed, closingTime) {
 
 export function getWorkingHours(status, openingTime, closingTime) {
   if (status === "closed") return `Opens at ${formatTime(openingTime)}`;
-  if (status === "open") return `Closing at ${formatTime(closingTime)}`;
-
-  return `Closing soon at ${formatTime(closingTime)}`;
+  return `Closing at ${formatTime(closingTime)}`;
 }
