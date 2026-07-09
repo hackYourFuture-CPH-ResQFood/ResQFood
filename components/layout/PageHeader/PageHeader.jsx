@@ -6,7 +6,7 @@ export default function PageHeader() {
   return (
     <div className={styles.header}>
       <Link href="/">
-        <Logo />
+        <Logo size="lg" />
       </Link>
     </div>
   );
