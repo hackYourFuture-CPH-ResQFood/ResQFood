@@ -5,7 +5,12 @@ import { Search } from "lucide-react";
 import Icon from "@/components/ui/Icon/Icon";
 import styles from "./SearchInput.module.css";
 
-export default function SearchInput({ onSearch, error = "", ...props }) {
+export default function SearchInput({
+  onSearch,
+  error = "",
+  buttonText = "Search",
+  ...props
+}) {
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (e) => {
@@ -32,14 +37,16 @@ export default function SearchInput({ onSearch, error = "", ...props }) {
           {...props}
         />
 
-        <button className={styles.button} type="submit" aria-label="Search">
+        <button className={styles.button} type="submit" aria-label={buttonText}>
           <Icon
             icon={Search}
             size="sm"
             shape="none"
             strokeWidth={2.5}
             className={styles.searchIcon}
+            color="inherit"
           />
+          <span>{buttonText}</span>
         </button>
       </div>
 
