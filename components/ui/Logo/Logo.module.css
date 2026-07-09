@@ -52,3 +52,9 @@
 .q {
   color: var(--color-background-secondary);
 }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

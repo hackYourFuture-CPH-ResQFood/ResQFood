@@ -9,6 +9,7 @@ import Message from "@/components/ui/Message/Message";
 import SearchInput from "@/components/ui/SearchInput/SearchInput";
 import { Geolocation } from "@/components/geolocation/Geolocation";
 import InfoSteps from "@/components/infoSteps/InfoSteps";
+import LogoAnimation from "@/components/logoAnimation/LogoAnimation";
 
 export default function Home() {
   const router = useRouter();
@@ -80,35 +81,41 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <section>
-        <FrontpageBanner />
-      </section>
-      <section>
-        {locationError ? (
-          <Message type="error">{getLocationErrorMessage(locationError)}</Message>
-        ) : (
-          <InfoList />
-        )}
-      </section>
-      <section>
-        <SearchInput
-          onSearch={goToStoresBySearch}
-          error={searchError}
-          placeholder="Enter zip code (4 - 5 digits)"
-          inputMode="numeric"
-          maxLength={5}
-        />
-      </section>
-      <section>
-        <Geolocation
-          setUserPosition={goToStoresByLocation}
-          getError={handleLocationError}
-        />
-      </section>
-      <section>
-        <InfoSteps />
-      </section>
-    </main>
+    <>
+      <LogoAnimation />
+
+      <main>
+        <section>
+          <FrontpageBanner />
+        </section>
+        <section>
+          {locationError ? (
+            <Message type="error">
+              {getLocationErrorMessage(locationError)}
+            </Message>
+          ) : (
+            <InfoList />
+          )}
+        </section>
+        <section>
+          <SearchInput
+            onSearch={goToStoresBySearch}
+            error={searchError}
+            placeholder="Enter zip code (4 - 5 digits)"
+            inputMode="numeric"
+            maxLength={5}
+          />
+        </section>
+        <section>
+          <Geolocation
+            setUserPosition={goToStoresByLocation}
+            getError={handleLocationError}
+          />
+        </section>
+        <section>
+          <InfoSteps />
+        </section>
+      </main>
+    </>
   );
 }

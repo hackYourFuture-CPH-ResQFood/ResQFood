@@ -1,0 +1,151 @@
+.hackMark {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  color: var(--color-background-secondary);
+}
+
+.hackMark svg {
+  height: 12rem;
+  width: 12rem;
+}
+
+.hackMark.active {
+  opacity: 1;
+}
+
+.hackMark .animationLayer {
+  stroke: var(--color-background-secondary);
+}
+
+.hackMark.active .animationLayer {
+  opacity: 1;
+  animation: dash 1.9s ease-in-out forwards;
+}
+
+.hackMark.active .layer2.animationLayer {
+  animation-delay: 1.2s;
+  animation:
+    dash 1.9s ease-in-out forwards,
+    fillIn 0.7s ease-out 1.5s forwards;
+}
+
+.hackMark.active .layer3.animationLayer {
+  animation-delay: 0.5s;
+}
+
+.hackMark .layer2.animationLayer,
+.hackMark .layer3.animationLayer {
+  animation-delay: 0s;
+}
+
+.logoText {
+  font-family: var(--font-family-headline-large);
+  font-size: 8rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.coverBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-background-primary);
+  transition: width 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: 1.5s;
+}
+
+.coverBox.active {
+  width: 0%; /* Shrinks the box, revealing the text left-to-right */
+}
+
+.white {
+  color: var(--color-icon-primary-inverse);
+}
+
+.green {
+  color: var(--color-background-secondary);
+}
+
+.animationContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation:
+    move 0.8s ease-in-out 4s forwards,
+    shrink 0.8s ease-in-out 5.5s forwards;
+}
+
+.animationPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-background-primary);
+  z-index: 50;
+  animation: fadeOutBg 1.3s ease-in-out 5.5s forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  99% {
+    /* Adjust -40vh to push it exactly to where your header sits */
+    /* Adjust scale(0.3) to match the exact size of your header logo */
+    transform: translate(-50%, -120%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* Instantly hide this fake logo right as the real one appears */
+    transform: translate(-50%, -120%) scale(1);
+  }
+}
+@keyframes shrink {
+  0% {
+    transform: translate(-50%, -120%) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translate(-50%, -120%) scale(0.5);
+    opacity: 0;
+    visibility: hidden; /* Completely removes the invisible box from the screen */
+  }
+}
+
+@keyframes fadeOutBg {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden; /* Completely removes the invisible box from the screen */
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillIn {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--color-background-secondary);
+  }
+}
