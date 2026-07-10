@@ -12,7 +12,6 @@ export default function Filter({
      
       <div className={styles.filterGroup}>
         <label htmlFor="productCategory" className={styles.label}>
-          Choose the category
         </label>
 
         <select

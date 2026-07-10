@@ -27,7 +27,7 @@ export default async function Stores({ searchParams }) {
   }
 
   return (
-    <>
+    <main>
       <p className="storeList-heading">
         Showing stores {areaCode ? `for ${areaCode}` : `near you`}
       </p>
@@ -43,6 +43,6 @@ export default async function Stores({ searchParams }) {
           <StoreList data={storeData} />
         </>
       )}
-    </>
+    </main>
   );
 }

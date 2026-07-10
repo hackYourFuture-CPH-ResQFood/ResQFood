@@ -4,6 +4,7 @@ import Filter from "@/components/filter/Filter";
 import ProductGrid from "@/components/ProductGrid/ProductGrid";
 import useCategoryFilter from "@/hooks/useCategoryFilter";
 import { filterProductsByCategory } from "@/utils/filterProduct";
+import styles from "./ProductSection.module.css"; 
 
 export default function ProductSection({ clearances = [], storeId }) {
   const { selectedCategory, setSelectedCategory, categories } =
@@ -15,14 +16,16 @@ export default function ProductSection({ clearances = [], storeId }) {
   );
 
   return (
-    <>
-      <Filter
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-        categories={categories}
-      />
-
-      <ProductGrid clearances={filteredClearances} storeId={storeId} />
-    </>
+    <div className={styles.productSection}>
+      <div className={styles.filterContainer}>
+        <Filter
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+          categories={categories}
+        />
+      </div>
+        <ProductGrid clearances={filteredClearances} storeId={storeId} />
+      
+    </div>
   );
 }

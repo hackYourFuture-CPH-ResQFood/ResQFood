@@ -10,6 +10,13 @@
   border-radius: var(--border-radius-small);
   box-shadow: var(--shadow-card);
   font-family: var(--font-family-headline-medium);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(243, 203, 203, 0.3) 0%,
+      rgba(210, 245, 223, 0.3) 52%,
+      rgba(195, 220, 237, 0.3) 100%
+    );
 }
 
 .infoStepText {
@@ -39,12 +46,13 @@
 }
 
 .stepIconFrame {
-  width: clamp(4.5rem, 12vw, 7.5rem);
+  width: clamp(4.5rem, 12vw, 7rem);
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border-primary);
+  background-color: rgba(255, 255, 255, 0.72);
   border-radius: var(--border-radius-full);
   overflow: hidden;
   padding: 1.1rem;

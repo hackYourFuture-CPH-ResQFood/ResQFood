@@ -1,0 +1,14 @@
+
+.productSection {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+align-items: center;}
+
+@media (min-width: 768px) {
+.filterContainer {
+    position: absolute;
+    right: 10%;
+    top: 16rem; 
+  }
+}

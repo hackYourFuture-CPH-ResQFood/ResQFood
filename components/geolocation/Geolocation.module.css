@@ -14,6 +14,7 @@
   border: none;
   background-color: transparent;
   gap: 0.5rem;
+  width: var(--cta-control-width);
 }
 
 .linkText:active {

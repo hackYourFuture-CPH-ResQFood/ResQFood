@@ -31,16 +31,18 @@ export default async function StoreDetailsPage({ params }) {
         <div className={styles.topBar}>
           <BackLink />
         </div>
-        <StoreCard
-          name={formattedStore.name}
-          id={formattedStore.brand}
-          address={formattedStore.address}
-          distance={formattedStore.distance}
-          openHours={formattedStore.workingHours}
-          status={formattedStore.status}
-          deals={storeData.clearances.length}
-          variant="flat"
-        />
+        <div className={styles.storeCard}>
+          <StoreCard
+            name={formattedStore.name}
+            id={formattedStore.brand}
+            address={formattedStore.address}
+            distance={formattedStore.distance}
+            openHours={formattedStore.workingHours}
+            status={formattedStore.status}
+            deals={storeData.clearances.length}
+            variant="flat"
+          />
+         </div>
         <ProductSection clearances={storeData.clearances ?? []} storeId={id} />
       </div>
     </main>
