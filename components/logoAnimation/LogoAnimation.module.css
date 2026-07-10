@@ -24,10 +24,10 @@
 }
 
 .hackMark.active .layer2.animationLayer {
-  animation-delay: 1s;
+  animation-delay: 0.3s;
   animation:
     dash 1.3s ease-in-out forwards,
-    fillIn 0.7s ease-out 1.5s forwards;
+    fillIn 0.7s ease-out 1.2s forwards;
 }
 
 .hackMark.active .layer3.animationLayer {
@@ -56,8 +56,8 @@
   bottom: 0;
   width: 100%;
   background-color: var(--color-background-primary);
-  transition: width 1.8s cubic-bezier(0.77, 0, 0.175, 1);
-  transition-delay: 1.5s;
+  transition: width 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: 0.2s;
 }
 
 .coverBox.active {
@@ -80,7 +80,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  animation: moveAndShrink 1.5s ease-in-out 4s forwards;
+  animation: moveAndShrink 1s ease-in-out 3s forwards;
 }
 
 .animationPage {
@@ -91,7 +91,7 @@
   width: 100vw;
   background-color: var(--color-background-primary);
   z-index: 50;
-  animation: fadeOutBg 1.2s ease-in-out 5s forwards;
+  animation: fadeOutBg 1.2s ease-in-out 3.8s forwards;
 }
 
 @keyframes moveAndShrink {
@@ -110,9 +110,9 @@
   }
   100% {
     /* At the absolute last millisecond, turns invisible so the real header can take over */
-    transform: translate(-62vw, -54vh) scale(0.4);
-    opacity: 0;
-    visibility: hidden;
+    transform: translate(-62vw, -53.7vh) scale(0.4);
+    opacity: 1;
+    /* visibility: hidden; */
   }
 }
 
