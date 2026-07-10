@@ -97,3 +97,6 @@
   fill: var(--color-icon-primary-inverse);
   stroke: var(--color-icon-primary-inverse);
 }
+.inherit {
+  color: currentColor;
+}

@@ -53,6 +53,7 @@ html {
   --color-background-info: #cfe3f0;
   --color-background-attention: #d58319;
   --color-background-error-strong: #b3261e;
+  --color-background-action: #14612f;
 
   /* Text Colors */
   --color-text-primary: var(--color-black);
@@ -64,12 +65,15 @@ html {
   --color-text-highlight: #14612f;
   --color-text-salling: #002747;
   --color-text-accent: #42a866;
+  --color-text-closing: #8a4b00;
 
   /* Borders */
   --color-border-primary: #e1d6d6;
   --color-border-error: var(--color-deep-red);
   --color-border-success: #c0e5c1;
   --color-border-info: #8bb8d6;
+  --color-border-action: #14612f;
+  --color-border-closing: #8a4b00;
 
   /* Badges */
 
@@ -107,52 +111,51 @@ html {
 
   /* Label Large */
   --font-family-label-large: "Inter", sans-serif;
-  --font-size-label-large: 1.5rem; /* 15px */
+  --font-size-label-large: 1.8rem; /* 15px */
   --line-height-label-large: 2rem; /* 20px */
   --font-weight-label-large: 600; /* SemiBold */
 
   /* Label Medium */
   --font-family-label-medium: "Inter", sans-serif;
-  --font-size-label-medium: 1.1rem; /* 11px */
+  --font-size-label-medium: 1.6rem; /* 11px */
   --font-weight-label-medium: 500; /* Medium */
   --line-height-label-medium: 1.6rem;
 
   /* Label Small */
   --font-family-label-small: "Inter", sans-serif;
-  --font-size-label-small: 0.9rem; /* 9px */
-  --line-height-label-small: 0.9rem; /* 8px */
+  --font-size-label-small: 1.4rem; /* 9px */
+  --line-height-label-small: 1.8rem; /* 8px */
   --font-weight-label-small: 500; /* Medium */
   --font-weight-label-small-emphasized: 600; /* SemiBold */
 
   /* Label Extra Small */
   --font-family-label-extra-small: "Inter", sans-serif;
-  --font-size-label-extra-small: 0.6rem; /* 6px */
+  --font-size-label-extra-small: 1.2rem; /* 6px */
+  --line-height-label-extra-small: 1.6rem;
   --font-weight-label-extra-small: 600; /* SemiBold */
   --font-weight-label-extra-small-emphasized: 800; /* ExtraBold */
 
   /* Body Large */
   --font-family-body-large: "Inter", sans-serif;
-  --font-size-body-large: 1.5rem; /* 15px */
+  --font-size-body-large: 1.8rem; /* 15px */
   --line-height-body-large: 2.5rem; /* 25px */
   --font-weight-body-large: 400; /* Regular */
-  --line-height-body-small: 1.4rem;
 
   /* Body Medium */
   --font-family-body-medium: "Inter", sans-serif;
-  --font-size-body-medium: 1.2rem; /* 12px */
+  --font-size-body-medium: 1.5rem; /* 12px */
   --line-height-body-medium: 2rem; /* 20px */
   --font-weight-body-medium: 500; /* Medium */
-  --line-height-body-small: 1.4rem;
 
   /* Body Small */
   --font-family-body-small: "Inter", sans-serif;
-  --font-size-body-small: 0.9rem; /* 9px */
+  --font-size-body-small: 1.2rem; /* 9px */
   --font-weight-body-small: 500; /* Medium */
   --font-weight-body-small-emphasized: 600; /* SemiBold */
 
   /* Shadows */
-  --shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  --shadow-hover: 0 4px 7px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 8px 24px rgba(0, 39, 71, 0.08);
+  --shadow-hover: 0 12px 32px rgba(0, 39, 71, 0.14);
 
   /* Border Radius */
 

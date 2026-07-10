@@ -81,14 +81,14 @@ export default function Home() {
   };
 
   return (
-    <>
-      <LogoAnimation />
-      <main>
-        <div className="mainPageContainer">
-          <section>
-            <FrontpageBanner />
-          </section>
-          <section>
+    <main>
+      <div className="mainPageContainer">
+        <section className="bannerSection">
+          <FrontpageBanner />
+        </section>
+
+        <section className="actionSection">
+          <div className="infoBlock">
             {locationError ? (
               <Message type="error">
                 {getLocationErrorMessage(locationError)}
@@ -96,27 +96,31 @@ export default function Home() {
             ) : (
               <InfoList />
             )}
-          </section>
-          <section>
-            <SearchInput
-              onSearch={goToStoresBySearch}
-              error={searchError}
-              placeholder="Enter zip code (4 - 5 digits)"
-              inputMode="numeric"
-              maxLength={5}
-            />
-          </section>
-          <section>
+          </div>
+
+          <div className="searchBlock">
+            <section className="findStoresSection">
+              <h2 className="findStoresTitle">Find stores near you</h2>
+              <SearchInput
+                onSearch={goToStoresBySearch}
+                error={searchError}
+                placeholder="Enter zip code (4 - 5 digits)"
+                inputMode="numeric"
+                maxLength={5}
+                buttonText="Search"
+              />
+            </section>
+
             <Geolocation
               setUserPosition={goToStoresByLocation}
               getError={handleLocationError}
             />
-          </section>
-          <section>
-            <InfoSteps />
-          </section>
-        </div>
-      </main>
-    </>
+          </div>
+        </section>
+        <section>
+          <InfoSteps />
+        </section>
+      </div>
+    </main>
   );
 }

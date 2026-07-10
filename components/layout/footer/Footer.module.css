@@ -1,12 +1,19 @@
 .footer {
-	padding: var(--spacing-md);
-    background: #50548f;
+  padding: var(--spacing-md);
+  background: #002747;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {
-	margin: 0 auto;
-	font-size: var(--font-size-body-small);
-	font-family: var(--font-family-body-small);
-	text-align: center;
-    color: var(--color-text-primary-inverse);
+  margin: 0 auto;
+  font-size: var(--font-size-body-small);
+  font-family: var(--font-family-body-small);
+  text-align: center;
+  color: var(--color-text-primary-inverse);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
