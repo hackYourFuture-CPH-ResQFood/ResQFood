@@ -9,6 +9,7 @@ import Message from "@/components/ui/Message/Message";
 import SearchInput from "@/components/ui/SearchInput/SearchInput";
 import { Geolocation } from "@/components/geolocation/Geolocation";
 import InfoSteps from "@/components/infoSteps/InfoSteps";
+import LogoAnimation from "@/components/logoAnimation/LogoAnimation";
 
 export default function Home() {
   const router = useRouter();
@@ -80,47 +81,49 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <div className="mainPageContainer">
-        <section  className="bannerSection">
-          <FrontpageBanner />
-        </section>
+    <>
+      <LogoAnimation />
+      <main>
+        <div className="mainPageContainer">
+          <section className="bannerSection">
+            <FrontpageBanner />
+          </section>
 
-        <section className="actionSection">
+          <section className="actionSection">
             <div className="infoBlock">
-          {locationError ? (
-            <Message type="error">
-              {getLocationErrorMessage(locationError)}
-            </Message>
-          ) : (
-            <InfoList />
-            )}
-          </div>
-          
-        <div className="searchBlock">
-        <section className="findStoresSection">
-          <h2 className="findStoresTitle">Find stores near you</h2>
-          <SearchInput
-            onSearch={goToStoresBySearch}
-            error={searchError}
-            placeholder="Enter zip code (4 - 5 digits)"
-            inputMode="numeric"
-            maxLength={5}
-            buttonText="Search"
-          />
-        </section>
-      
-          <Geolocation
-            setUserPosition={goToStoresByLocation}
-            getError={handleLocationError}
-          />
-          
-          </div>
-            </section>
-        <section>
-          <InfoSteps />
-        </section>
-      </div>
-    </main>
+              {locationError ? (
+                <Message type="error">
+                  {getLocationErrorMessage(locationError)}
+                </Message>
+              ) : (
+                <InfoList />
+              )}
+            </div>
+
+            <div className="searchBlock">
+              <section className="findStoresSection">
+                <h2 className="findStoresTitle">Find stores near you</h2>
+                <SearchInput
+                  onSearch={goToStoresBySearch}
+                  error={searchError}
+                  placeholder="Enter zip code (4 - 5 digits)"
+                  inputMode="numeric"
+                  maxLength={5}
+                  buttonText="Search"
+                />
+              </section>
+
+              <Geolocation
+                setUserPosition={goToStoresByLocation}
+                getError={handleLocationError}
+              />
+            </div>
+          </section>
+          <section>
+            <InfoSteps />
+          </section>
+        </div>
+      </main>
+    </>
   );
 }
