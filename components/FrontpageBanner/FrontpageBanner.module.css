@@ -67,11 +67,15 @@
 }
 
 .partnershipText {
-  color: var(--color-text-secondary);
-  font-size: clamp(0.8rem, 1.8vw, 1.3rem);
+  color: var(--color-text-salling);
+
+  font-size: clamp(0.8rem, 1.4vw, 1.2rem);
   font-weight: 500;
-  line-height: 1;
   white-space: nowrap;
+
+  font-family: var(--font-family-body, inherit);
+
+  line-height: var(--line-height-body-large);
 }
 
 .rightRectangle {
