@@ -1,37 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import defaultFallbackImage from "./assets/heart.png";
 
 export default function FallbackImage({
-	src,
-	alt,
-	fallbackSrc = defaultFallbackImage,
-	onError,
-	...props
+  src,
+  alt,
+  fallbackSrc = defaultFallbackImage,
+  onError,
+  ...props
 }) {
-	const [imageError, setImageError] = useState(false);
-	const isShowingFallback = imageError || !src;
-	const imageSrc = isShowingFallback ? fallbackSrc : src;
+  const [failedSrc, setFailedSrc] = useState(null);
 
-	useEffect(() => {
-		setImageError(false);
-	}, [src]);
+  const imageError = Boolean(src) && failedSrc === src;
+  const isShowingFallback = imageError || !src;
+  const imageSrc = isShowingFallback ? fallbackSrc : src;
 
-	const handleError = (event) => {
-		if (!isShowingFallback) {
-			setImageError(true);
-		}
-		onError?.(event);
-	};
+  const handleError = (event) => {
+    if (!isShowingFallback && src) {
+      setFailedSrc(src);
+    }
 
-	return (
-		<Image
-			{...props}
-			src={imageSrc}
-			alt={isShowingFallback ? "" : alt || "ResQFood"}
-			onError={handleError}
-		/>
-	);
+    onError?.(event);
+  };
+
+  return (
+    <Image
+      {...props}
+      src={imageSrc}
+      alt={isShowingFallback ? "" : alt || "ResQFood"}
+      onError={handleError}
+    />
+  );
 }

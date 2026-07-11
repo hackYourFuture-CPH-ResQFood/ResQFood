@@ -1,3 +1,4 @@
+import Link from "next/link";
 import StoreList from "@/components/storeList/StoreList";
 import {
   getFoodWasteByGeo,
@@ -13,6 +14,19 @@ export default async function Stores({ searchParams }) {
   const areaCode = params.zip;
   const latitude = params.lat;
   const longitude = params.lng;
+  const hasSearchRequest = source || areaCode || latitude || longitude;
+
+  if (!hasSearchRequest) {
+    return (
+      <main>
+        <h1 className="storeList-heading">Find stores near you</h1>
+        <p className="storeList-subHeading">
+          Search by zip code or use your location to see nearby food deals.
+        </p>
+        <Link href="/">Back to search</Link>
+      </main>
+    );
+  }
 
   try {
     if (source === "search" && areaCode) {

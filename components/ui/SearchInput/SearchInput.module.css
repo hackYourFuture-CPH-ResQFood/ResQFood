@@ -46,4 +46,6 @@
 .error {
   color: var(--color-text-error);
   font-size: var(--font-size-body-medium);
+  margin-top: 1rem;
+  padding-left: var(--spacing-sm);
 }

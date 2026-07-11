@@ -68,7 +68,7 @@ export default function Home() {
   const getLocationErrorMessage = (errorCode) => {
     switch (errorCode) {
       case 1:
-        return "Location access was denied. Please allow location access or try again.";
+        return "We could not use your location because permission was denied. Enable location access in your browser settings or search by zip code instead.";
       case 2:
         return "We could not determine your location right now. Please try again.";
       case 3:
