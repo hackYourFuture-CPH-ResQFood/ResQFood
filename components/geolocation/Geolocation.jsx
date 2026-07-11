@@ -28,7 +28,7 @@ export function Geolocation({ setUserPosition, getError }) {
           {loading ? "Getting your location" : "Use my location instead"}
         </span>
       </button>
-       <hr className={styles.divider} />
+       {/* <hr className={styles.divider} /> */}
     </div>
      
   );

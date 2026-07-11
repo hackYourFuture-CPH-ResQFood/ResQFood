@@ -20,12 +20,14 @@
 /* Home page */
 .bannerSection {
   width: 100%;
+  margin-top: var(--spacing-md);
 }
 
 .actionSection {
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .infoBlock,
@@ -33,10 +35,68 @@
   width: 100%;
 }
 
+.packBlock {
+  display: none;
+}
+
 .searchBlock {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
+}
+
+.searchDivider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--color-text-secondary);
+  margin: var(--spacing-xs) 0;
+}
+
+.searchDivider::before,
+.searchDivider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.searchDividerText {
+  padding: 0 var(--spacing-sm);
+  font-family: var(--font-family-label-medium);
+  font-size: var(--font-size-label-medium);
+  line-height: var(--line-height-label-medium);
+  text-transform: lowercase;
+}
+
+.togetherText {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: var(--spacing-sm) 0 0;
+  padding: 1.2rem;
+  /* border: 1px solid var(--color-border-primary); */
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-background-neutral);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-label-small);
+  font-size: var(--font-size-label-small);
+  line-height: var(--line-height-label-small);
+  text-align: center;
+}
+
+.togetherLeaf {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+}
+
+.packImage {
+  display: block;
+  width: min(100%, 33rem);
+  height: auto;
 }
 
 .findStoresTitle {
@@ -46,33 +106,6 @@
   font-weight: var(--font-weight-label-large);
   line-height: var(--line-height-label-large);
   margin: 0 0 var(--spacing-sm);
-}
-
-@media (min-width: 768px) {
-  .mainPageContainer {
-    width: min(100%, 96rem);
-  }
-
-  .bannerSection {
-    max-width: 56rem;
-    margin: 0 auto;
-  }
-
-  .actionSection {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(32rem, 42rem);
-    align-items: center;
-    gap: clamp(3.2rem, 6vw, 7.2rem);
-  }
-
-  .searchBlock {
-    padding: var(--spacing-lg);
-
-    border: 1px solid var(--color-border-primary);
-    border-radius: var(--border-radius-medium);
-    background-color: var(--color-background-page);
-    box-shadow: var(--shadow-card);
-  }
 }
 
 /* ProductDetail page */
@@ -101,6 +134,53 @@
 
 /* Tablet & Desktop */
 @media (min-width: 768px) {
+/*Current Change*/
+  .mainPageContainer {
+    width: min(100%, 96rem);
+  }
+
+  .bannerSection {
+    max-width: 56rem;
+    margin: clamp(1.6rem, 3vw, 3.2rem) auto 0;
+  }
+
+  .actionSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .infoBlock,
+  .packBlock,
+  .searchBlock {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .packBlock {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .packImage {
+    margin-top: -5.5rem;
+  }
+
+  .searchBlock {
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-card);
+  }
+
+  .productDetailPageTopBar {
+    margin-bottom: var(--spacing-xl);
+  }
+
+/*origin/development*/
   .productDetailPageContent {
     align-items: center;
     justify-content: space-between;
@@ -121,7 +201,6 @@
     border-radius: var(--border-radius-small);
     margin: 0;
     padding: 0;
-
     gap: var(--spacing-lg);
   }
 }

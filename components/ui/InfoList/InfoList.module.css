@@ -34,26 +34,20 @@
 .text {
   margin: 0;
   color: var(--color-text-primary);
-
   font-family: var(--font-family-body-large);
   font-size: var(--font-size-body-large);
   line-height: var(--line-height-body-large);
-
   text-align: justify;
-  letter-spacing: 0;
+  letter-spacing: 0.8px;
 }
 
-.text strong {
-  font-weight: 700;
-  color: var(--color-text-primary);
-}
 @media (min-width: 768px) {
-  .wrapper {
-    max-width: 58rem;
+  .list {
+    flex-direction: row;
+    gap: var(--spacing-2xl);
   }
-
   .text {
-    max-width: 56ch;
-    text-wrap: pretty;
+    font-size: var(--font-size-body-medium);
+    line-height: var(--line-height-body-medium);
   }
 }

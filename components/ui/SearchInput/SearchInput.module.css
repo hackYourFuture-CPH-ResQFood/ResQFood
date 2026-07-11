@@ -49,3 +49,9 @@
   margin-top: 1rem;
   padding-left: var(--spacing-sm);
 }
+
+@media (min-width: 768px) {
+  .input {
+    font-size: var(--font-size-body-small);
+  }
+}

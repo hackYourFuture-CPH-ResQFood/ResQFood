@@ -6,7 +6,7 @@ const infoItems = [
     id: "products",
     text: (
       <>
-        <strong>Every day, over 10,000</strong> discounted food products are
+        Every day, over 10,000 discounted food products are
         available in local stores.
       </>
     ),
@@ -15,7 +15,7 @@ const infoItems = [
     id: "partnership",
     text: (
       <>
-        <strong>Salling Group and ResQFood</strong> have partnered to reduce
+        Salling Group and ResQFood have partnered to reduce
         food waste.
       </>
     ),
@@ -24,7 +24,7 @@ const infoItems = [
     id: "offers",
     text: (
       <>
-        <strong>Find offers near you</strong> and help rescue perfectly good
+        Find offers near you and help rescue perfectly good
         food before it goes to waste.
       </>
     ),
