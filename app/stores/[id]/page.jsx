@@ -27,8 +27,8 @@ export default async function StoreDetailsPage({ params }) {
 
   return (
     <main className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.topBar}>
+      <div className="pageContentContainer">
+        <div className="pageTopBar">
           <BackLink />
         </div>
         <div className={styles.storeCard}>

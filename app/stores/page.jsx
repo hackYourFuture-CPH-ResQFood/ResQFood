@@ -1,4 +1,4 @@
-import Link from "next/link";
+import BackLink from "@/components/ui/BackLink/BackLink";
 import StoreList from "@/components/storeList/StoreList";
 import {
   getFoodWasteByGeo,
@@ -19,11 +19,15 @@ export default async function Stores({ searchParams }) {
   if (!hasSearchRequest) {
     return (
       <main>
-        <h1 className="storeList-heading">Find stores near you</h1>
-        <p className="storeList-subHeading">
-          Search by zip code or use your location to see nearby food deals.
-        </p>
-        <Link href="/">Back to search</Link>
+        <div className="pageContentContainer">
+          <div className="pageTopBar">
+            <BackLink href="/" label="Back to search" />
+          </div>
+          <h1 className="storeList-heading">Find stores near you</h1>
+          <p className="storeList-subHeading">
+            Search by zip code or use your location to see nearby food deals.
+          </p>
+        </div>
       </main>
     );
   }
@@ -42,17 +46,16 @@ export default async function Stores({ searchParams }) {
 
   return (
     <main>
-      <p className="storeList-heading">
-        Showing stores {areaCode ? `for ${areaCode}` : `near you`}
-      </p>
+      <div className="pageContentContainer">
+        <div className="pageTopBar">
+          <BackLink href="/" label="Back to search" />
+        </div>
+        <p className="storeList-heading">
+          Showing stores {areaCode ? `for ${areaCode}` : `near you`}
+        </p>
 
-      {errorMessage ? (
-        <p>{errorMessage}</p>
-      ) : (
-        <>
-          <StoreList data={storeData} />
-        </>
-      )}
+        {errorMessage ? <p>{errorMessage}</p> : <StoreList data={storeData} />}
+      </div>
     </main>
   );
 }

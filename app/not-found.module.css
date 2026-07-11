@@ -1,14 +1,14 @@
 .page {
   min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-lg);
 }
 
 .content {
   max-width: 36rem;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -26,17 +26,4 @@
   font-size: var(--font-size-body-large);
   line-height: var(--line-height-body-large);
   color: var(--color-text-muted);
-}
-
-.link {
-  color: var(--color-text-success);
-  font-family: var(--font-family-label-large);
-  font-size: var(--font-size-label-large);
-  font-weight: var(--font-weight-label-large);
-  text-decoration: underline;
-  text-underline-offset: var(--spacing-2xs);
-}
-
-.link:hover {
-  color: var(--color-text-accent);
 }
