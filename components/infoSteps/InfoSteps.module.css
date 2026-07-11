@@ -11,11 +11,24 @@
   font-family: var(--font-family-headline-medium);
 }
 
+.infoStepTitle, .infoStepSubtitle {
+  display: none;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: left;
+  line-height: 0.9;
+}
+
+.infoStepSubtitle {
+  color: var(--color-text-success);
+}
+
 .infoStepText {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 500;
   text-align: center;
   letter-spacing: 0.5px;
+  margin-top: var(--spacing-md);
 }
 
 .steps {
@@ -44,7 +57,6 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border-primary);
-  background-color: rgba(255, 255, 255, 0.72);
   border-radius: var(--border-radius-full);
   overflow: hidden;
   padding: 1.1rem;
@@ -71,5 +83,42 @@
     padding: var(--spacing-lg) var(--spacing-md);
     border: none;
     box-shadow: none;
+  }
+
+  .infoStepTitle, .infoStepSubtitle {
+    display: block;
+    width: 100%;
+    align-self: stretch;
+    margin: 0;
+  }
+
+  .infoStepText {
+    width: 100%;
+    align-self: stretch;
+    text-align: left;
+  }
+
+  .steps {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: clamp(0.6rem, 1.6vw, 1.2rem);
+  }
+
+  .step {
+    flex: 1 1 0;
+    max-width: 10rem;
+    gap: clamp(0.6rem, 1.4vw, 1rem);
+  }
+
+  .stepIconFrame {
+    width: clamp(3.5rem, 9vw, 6rem);
+    padding: 0.75rem;
+    background-color: var(--color-background-neutral);
+  }
+
+  .stepText {
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    max-width: 8rem;
   }
 }

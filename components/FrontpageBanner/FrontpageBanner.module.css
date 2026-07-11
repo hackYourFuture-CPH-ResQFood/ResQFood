@@ -68,13 +68,10 @@
 
 .partnershipText {
   color: var(--color-text-info);
-
-  font-size: clamp(0.8rem, 1.4vw, 1.2rem);
+  font-size: clamp(1rem, 4vw, 1.6rem);
   font-weight: 500;
   white-space: nowrap;
-
   font-family: var(--font-family-body, inherit);
-
   line-height: var(--line-height-body-large);
 }
 
@@ -132,6 +129,6 @@
   }
 
   .partnershipText {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 }
