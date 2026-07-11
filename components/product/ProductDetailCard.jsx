@@ -13,7 +13,7 @@ export default function ProductDetailCard({ offer, product }) {
     const stock = offer.stock;
     const stockRange =
         stock > 5 ? "more than 5 left" :
-        stock > 1 ? "1-5 left" :
+        stock >= 1 ? "1-5 left" :
         "Out of Stock";
 
     return (
