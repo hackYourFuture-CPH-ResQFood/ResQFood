@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import StoreList from "@/components/storeList/StoreList";
 import {
   getFoodWasteByGeo,
   getFoodWasteByZip,
 } from "@/services/foodWasteService";
+import { data } from "react-router";
 
 export default async function Stores({ searchParams }) {
   let storeData = [];
@@ -38,6 +40,10 @@ export default async function Stores({ searchParams }) {
     console.error("Failed to load stores:", error);
 
     errorMessage = "Could not load stores right now. Please try again later.";
+  }
+
+  if (storeData.length === 0) {
+    notFound();
   }
 
   return (
