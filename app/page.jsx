@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import FrontpageBanner from "@/components/FrontpageBanner/FrontpageBanner";
@@ -15,6 +15,16 @@ export default function Home() {
   const router = useRouter();
   const [locationError, setLocationError] = useState(null);
   const [searchError, setSearchError] = useState("");
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    const alreadyRan = localStorage.getItem("animationDidRun");
+
+    if (!alreadyRan) {
+      setShowAnimation(true);
+      localStorage.setItem("animationDidRun", "true");
+    }
+  }, []);
 
   const buildStoresUrl = (params) => {
     const searchParams = new URLSearchParams(params);
@@ -82,10 +92,9 @@ export default function Home() {
 
   return (
     <>
-      <LogoAnimation />
+      {showAnimation && <LogoAnimation />}
       <main>
         <div className="mainPageContainer">
-
           <section className="actionSection">
             <div className="infoBlock">
               {locationError ? (
@@ -115,11 +124,11 @@ export default function Home() {
                 getError={handleLocationError}
               />
             </div>
-          </section>          
+          </section>
           <section>
             <InfoList />
           </section>
-          
+
           <section className="bannerSection">
             <FrontpageBanner />
           </section>
