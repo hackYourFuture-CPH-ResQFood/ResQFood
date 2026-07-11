@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -16,6 +16,7 @@ export default function Home() {
   const router = useRouter();
   const [locationError, setLocationError] = useState(null);
   const [searchError, setSearchError] = useState("");
+  const [isPending, startTransition] = useTransition();
 
   const buildStoresUrl = (params) => {
     const searchParams = new URLSearchParams(params);
@@ -38,7 +39,9 @@ export default function Home() {
     setSearchError("");
     setLocationError(null);
 
-    router.push(buildStoresUrl({ zip, source: "search" }));
+    startTransition(() => {
+      router.push(buildStoresUrl({ zip, source: "search" }));
+    });
   };
 
   const goToStoresByLocation = (position) => {
@@ -53,13 +56,15 @@ export default function Home() {
     setLocationError(null);
     setSearchError("");
 
-    router.push(
-      buildStoresUrl({
-        lat: String(latitude),
-        lng: String(longitude),
-        source: "geolocation",
-      }),
-    );
+    startTransition(() => {
+      router.push(
+        buildStoresUrl({
+          lat: String(latitude),
+          lng: String(longitude),
+          source: "geolocation",
+        }),
+      );
+    });
   };
 
   const handleLocationError = (errorCode) => {
@@ -86,7 +91,6 @@ export default function Home() {
       <LogoAnimation />
       <main>
         <div className="mainPageContainer">
-
           <section className="actionSection">
             <div className="infoBlock">
               {locationError ? (
@@ -119,6 +123,7 @@ export default function Home() {
                   inputMode="numeric"
                   maxLength={5}
                   buttonText="Search"
+                  disabled={isPending}
                 />
               </section>
 
@@ -129,6 +134,7 @@ export default function Home() {
               <Geolocation
                 setUserPosition={goToStoresByLocation}
                 getError={handleLocationError}
+                isPending={isPending}
               />
 
               <p className="togetherText">
@@ -143,11 +149,11 @@ export default function Home() {
                 <span>Together we can make a difference.</span>
               </p>
             </div>
-          </section>          
+          </section>
           <section>
             <InfoList />
           </section>
-          
+
           <section className="bannerSection">
             <FrontpageBanner />
           </section>

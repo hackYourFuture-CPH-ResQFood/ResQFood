@@ -22,9 +22,11 @@
   color: var(--color-text-primary);
   background-color: transparent;
 }
+
 .input::placeholder {
   color: var(--color-text-muted);
 }
+
 .input:focus {
   outline: none;
 }
@@ -41,6 +43,12 @@
   font-size: var(--font-size-body-large);
   font-weight: 600;
   cursor: pointer;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1);
 }
 
 .error {
