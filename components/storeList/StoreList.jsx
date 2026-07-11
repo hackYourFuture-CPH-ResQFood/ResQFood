@@ -14,7 +14,7 @@ export default function StoreList({ data = [] }) {
     useStoreFiltering(data);
 
   return (
-    <>
+    <div className={styles.storeListInfo}>
       <div className={styles.filterContainer}>
         <Filter
           selectedCategory={selectedCategory}
@@ -48,7 +48,7 @@ export default function StoreList({ data = [] }) {
                   openHours={formattedStore.workingHours}
                   status={formattedStore.status}
                   deals={deals}
-                  variant="flat"
+                  variant="active"
                 />
               </Link>
 
@@ -70,6 +70,6 @@ export default function StoreList({ data = [] }) {
           );
         })
       )}
-    </>
+    </div>
   );
 }

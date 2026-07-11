@@ -40,9 +40,9 @@ export default async function StoreDetailsPage({ params }) {
             openHours={formattedStore.workingHours}
             status={formattedStore.status}
             deals={storeData.clearances.length}
-            variant="flat"
+            variant="inactive"
           />
-         </div>
+        </div>
         <ProductSection clearances={storeData.clearances ?? []} storeId={id} />
       </div>
     </main>

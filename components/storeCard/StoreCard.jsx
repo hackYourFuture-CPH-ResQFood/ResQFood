@@ -12,7 +12,7 @@ export default function StoreCard({
   openHours,
   status,
   deals,
-  variant = "flat",
+  variant = "active",
 }) {
   return (
     <>

@@ -1,3 +1,7 @@
+.storeListInfo {
+  position: relative;
+}
+
 .storeBlock {
   display: flex;
   flex-direction: column;
@@ -35,7 +39,7 @@
 @media (min-width: 768px) {
   .filterContainer {
     position: absolute;
-    right: 5%;
-    top: 14rem;
+    right: 1rem;
+    top: -2.5rem;
   }
 }
