@@ -5,7 +5,6 @@ import {
   getFoodWasteByGeo,
   getFoodWasteByZip,
 } from "@/services/foodWasteService";
-import { data } from "react-router";
 
 export default async function Stores({ searchParams }) {
   let storeData = [];
