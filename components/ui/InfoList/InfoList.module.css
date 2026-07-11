@@ -34,26 +34,9 @@
 .text {
   margin: 0;
   color: var(--color-text-primary);
-
   font-family: var(--font-family-body-large);
   font-size: var(--font-size-body-large);
   line-height: var(--line-height-body-large);
-
   text-align: justify;
-  letter-spacing: 0;
-}
-
-.text strong {
-  font-weight: 700;
-  color: var(--color-text-primary);
-}
-@media (min-width: 768px) {
-  .wrapper {
-    max-width: 58rem;
-  }
-
-  .text {
-    max-width: 56ch;
-    text-wrap: pretty;
-  }
+  letter-spacing: 0.8px;
 }

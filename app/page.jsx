@@ -85,9 +85,6 @@ export default function Home() {
       <LogoAnimation />
       <main>
         <div className="mainPageContainer">
-          <section className="bannerSection">
-            <FrontpageBanner />
-          </section>
 
           <section className="actionSection">
             <div className="infoBlock">
@@ -96,7 +93,7 @@ export default function Home() {
                   {getLocationErrorMessage(locationError)}
                 </Message>
               ) : (
-                <InfoList />
+                <InfoSteps />
               )}
             </div>
 
@@ -118,9 +115,13 @@ export default function Home() {
                 getError={handleLocationError}
               />
             </div>
-          </section>
+          </section>          
           <section>
-            <InfoSteps />
+            <InfoList />
+          </section>
+          
+          <section className="bannerSection">
+            <FrontpageBanner />
           </section>
         </div>
       </main>
