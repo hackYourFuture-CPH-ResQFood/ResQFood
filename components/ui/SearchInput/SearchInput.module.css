@@ -50,6 +50,12 @@
   cursor: pointer;
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
 .button:hover {
   background-color: var(--color-background-success);
   color: var(--color-text-success);

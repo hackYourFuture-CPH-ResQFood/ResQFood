@@ -6,38 +6,8 @@
   flex-shrink: 0;
 }
 
-.hackMark svg {
-  height: 8rem;
-  width: 8rem;
-}
-
 .hackMark.active {
   opacity: 1;
-}
-
-.hackMark .animationLayer {
-  stroke: var(--color-background-secondary);
-}
-
-.hackMark.active .animationLayer {
-  opacity: 1;
-  animation: dash 1.3s ease-in-out forwards;
-}
-
-.hackMark.active .layer2.animationLayer {
-  animation-delay: 0.3s;
-  animation:
-    dash 1.3s ease-in-out forwards,
-    fillIn 0.7s ease-out 1.2s forwards;
-}
-
-.hackMark.active .layer3.animationLayer {
-  animation-delay: 0.5s;
-}
-
-.hackMark .layer2.animationLayer,
-.hackMark .layer3.animationLayer {
-  animation-delay: 0s;
 }
 
 .logoText {
@@ -98,23 +68,18 @@
 
 @keyframes moveAndShrinkMobile {
   0% {
-    /* Starts dead center, full size */
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     visibility: visible;
   }
   99% {
-    /* Arrives at the top-left header position. 
-       Tweak -38vw and -45vh if you need to nudge it slightly left/right/up/down! */
     transform: translate(-55vw, -50vh) scale(0.66);
-    opacity: 1; /* Stays fully visible while moving */
+    opacity: 1;
     visibility: visible;
   }
   100% {
-    /* At the absolute last millisecond, turns invisible so the real header can take over */
     transform: translate(-55vw, -50vh) scale(0.66);
     opacity: 1;
-    /* visibility: hidden; */
   }
 }
 
@@ -125,30 +90,11 @@
   }
   100% {
     opacity: 0;
-    visibility: hidden; /* Completely removes the invisible box from the screen */
-  }
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fillIn {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: var(--color-background-secondary);
+    visibility: hidden;
   }
 }
 
 @media (min-width: 768px) {
-  .hackMark svg {
-    height: 12rem;
-    width: 12rem;
-  }
-
   .logoText {
     font-size: 7.8rem;
   }

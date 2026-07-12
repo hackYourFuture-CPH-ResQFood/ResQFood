@@ -10,10 +10,6 @@ export default function Filter({
   return (
     <section className={styles.filter} aria-label="Product category filter">
       <div className={styles.filterGroup}>
-        <label htmlFor="productCategory" className={styles.label}>
-          {" "}
-          Filter products by category
-        </label>
         <div className={styles.selectWrapper}>
           <ListFilter className={styles.leftIcon} aria-hidden="true" />
           <select

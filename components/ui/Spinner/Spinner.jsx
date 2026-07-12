@@ -1,29 +1,63 @@
-export default function Spinner() {
+"use client";
+import React, { useEffect, useRef } from "react";
+import styles from "./Spinner.module.css";
+
+export default function Spinner({ isInfinite = true, size = "md" }) {
+  const pathRefs = useRef([]);
+
+  const addToRefs = (el) => {
+    if (el && !pathRefs.current.includes(el)) {
+      pathRefs.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    pathRefs.current.forEach((path) => {
+      if (path && path.getTotalLength) {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+      }
+    });
+  }, []);
+
   return (
-    <>
+    <div
+      className={`${styles.spinnerWrapper} ${isInfinite ? styles.infinite : styles.once} ${styles[size]}`}
+    >
       <svg
-        viewBox="0 0 200 200"
+        viewBox="0 0 64 64"
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="100%"
+        xmlSpace="preserve"
+        style={{
+          fillRule: "evenodd",
+          clipRule: "evenodd",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          strokeMiterlimit: 1.5,
+        }}
       >
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-width="12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          {/* 1. The Main Heart Outer Path */}
-          <path d="M 94 165 C 50 135 15 100 15 65 C 15 35 40 15 65 15 C 82 15 94 28 100 35 C 106 28 118 15 135 15 C 160 15 185 35 185 65 C 185 71 183 77 181 83" />
+        <path
+          ref={addToRefs}
+          className={styles.animationLayer}
+          d="M32 54S6 38.5 6 21.5C6 12.4 13.2 6 21.3 6 26.5 6 30.4 8.7 32 12.4 33.6 8.7 37.5 6 42.7 6 50.8 6 58 12.4 58 21.5 58 38.5 32 54 32 54Z"
+          style={{ strokeWidth: "2.3px" }}
+        />
 
-          {/* 2. The Leaf Outline */}
-          <path d="M 94 165 C 90 120 100 95 184 91 C 170 145 140 180 106 142" />
+        <path
+          ref={addToRefs}
+          className={`${styles.animationLayer} ${styles.layer2}`}
+          d="M32 46c0-9 5-16 14-19-1 10-6 16-14 19Z"
+          style={{ strokeWidth: "1px" }}
+        />
 
-          {/* 3. The Leaf Center Vein */}
-          <path d="M 120 125 C 135 118 150 115 160 116" />
-        </g>
+        <path
+          ref={addToRefs}
+          className={`${styles.animationLayer} ${styles.layer3}`}
+          d="M32 46c0-7-3-12-9-14"
+          style={{ strokeWidth: "2px" }}
+        />
       </svg>
-    </>
+    </div>
   );
 }

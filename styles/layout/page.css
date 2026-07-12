@@ -42,8 +42,25 @@ section {
   margin: var(--spacing-md) 0;
 }
 
+.loading-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 90vh;
+  height: 90vw;
+  background-color: var(--color-background-page);
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+.loading-message {
+  color: var(--color-text-info);
+  font-size: var(--font-size-label-large);
+}
+
 @media (min-width: 480px) and (max-width: 768px) {
   .mainPageContainer {
-  padding: 0 3vw;
+    padding: 0 3vw;
   }
 }

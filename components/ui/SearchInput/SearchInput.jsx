@@ -9,6 +9,7 @@ export default function SearchInput({
   onSearch,
   error = "",
   buttonText = "Search",
+  disabled,
   ...props
 }) {
   const [searchValue, setSearchValue] = useState("");
@@ -45,6 +46,7 @@ export default function SearchInput({
             strokeWidth={2.5}
             className={styles.searchIcon}
             color="inherit"
+            disabled={disabled}
           />
           <span>{buttonText}</span>
         </button>
