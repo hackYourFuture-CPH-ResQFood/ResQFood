@@ -1,3 +1,8 @@
+.selectWrapper {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
 .filter {
   display: flex;
   flex-direction: column;
@@ -24,13 +29,24 @@
   font-weight: var(--font-weight-label-large);
   line-height: var(--line-height-label-large);
 }
-
+.leftIcon {
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+   z-index: 1;
+}
 .select {
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  min-width: 24rem;
 
   padding: var(--spacing-sm) var(--spacing-md);
+  padding-left: 5.2rem;
+  padding-right: 4rem;
 
   color: var(--color-text-primary);
   background-color: var(--color-background-page);
@@ -39,9 +55,9 @@
   border-radius: var(--border-radius-small);
   box-shadow: var(--shadow-card);
 
-  font-family: var(--font-family-body-large);
-  font-size: var(--font-size-body-large);
-  line-height: var(--line-height-body-large);
+  font-family: var(--font-family-body-medium);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
 
   cursor: pointer;
 

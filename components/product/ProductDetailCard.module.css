@@ -13,7 +13,7 @@
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,9 +30,12 @@
 
 .discountBadge {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: var(--spacing-sm);
+  right: 0;
+  transform: translateX(calc(100% + var(--spacing-sm)));
   padding: 0.5rem;
+  background-color: var(--color-background-warn);
+  color: var(--color-text-primary);
   font-weight: var(--font-weight-label-small-emphasized);
   font-family: var(--font-family-label-small);
   font-size: var(--font-size-label-small);
@@ -102,7 +105,7 @@
 }
 
 .expired {
-    display: inline-flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   color: var(--color-text-error);
@@ -129,4 +132,28 @@
   color: var(--color-text-attention);
   font-family: var(--font-family-label-small);
   margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .productCard {
+    display: grid;
+    grid-template-columns: 24rem minmax(0, 1fr);
+    align-items: center;
+    gap: var(--spacing-2xl);
+
+    width: 100%;
+    max-width: 58rem;
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    width: 24rem;
+    height: 22rem;
+    max-width: 24rem;
+    aspect-ratio: auto;
+    margin: 0;
+  }
+
+  .cardBody {
+    padding: 0;
+  }
 }

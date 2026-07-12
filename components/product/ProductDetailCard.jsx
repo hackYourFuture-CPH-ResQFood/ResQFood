@@ -13,7 +13,7 @@ export default function ProductDetailCard({ offer, product }) {
     const stock = offer.stock;
     const stockRange =
         stock > 5 ? "more than 5 left" :
-        stock > 1 ? "1-5 left" :
+        stock >= 1 ? "1-5 left" :
         "Out of Stock";
 
     return (
@@ -58,20 +58,22 @@ export default function ProductDetailCard({ offer, product }) {
                         />
                         {expired ? "Expired" : getExpiryLabel(offer.endTime)} 
                      </span>
-                    <p className={styles.stockAmount}>
-                        <Icon
-                            icon={Package}
-                            size="sm"
-                            shape="none"
-                            strokeWidth={1.8}
-                            className={styles.infoIcon}
-                            style={{ color: "inherit" }}
-                        />
-                        <span>{stockRange}</span>
-                    </p>
+                    {!expired && (
+                        <p className={styles.stockAmount}>
+                            <Icon
+                                icon={Package}
+                                size="sm"
+                                shape="none"
+                                strokeWidth={1.8}
+                                className={styles.infoIcon}
+                                style={{ color: "inherit" }}
+                            />
+                            <span>{`${stockRange} *`}</span>
+                        </p>
+                    )}
 
                 </div>
-                <p className={styles.disclaimer}>* Amount left may vary</p>
+                {!expired && <p className={styles.disclaimer}>* Amount left may vary</p>}
 
             </div>
         </article>

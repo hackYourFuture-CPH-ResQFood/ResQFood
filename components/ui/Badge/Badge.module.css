@@ -32,12 +32,31 @@
 .open {
   background-color: var(--color-background-success);
   color: var(--color-text-success);
+  border: 1px solid var(--color-border-action);
+}
+
+.open:before {
+  content: "Open";
 }
 
 .closed {
   background-color: var(--color-background-error);
   color: var(--color-text-error);
   border: 1px solid var(--color-border-error);
+}
+
+.closed:before {
+  content: "Closed";
+}
+
+.closingSoon {
+  background-color: var(--color-background-attention);
+  color: var(--color-text-closing);
+  border: 1px solid var(--color-border-closing);
+}
+
+.closingSoon:before {
+  content: "Closing soon";
 }
 
 .deals {

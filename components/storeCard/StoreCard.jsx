@@ -12,13 +12,13 @@ export default function StoreCard({
   openHours,
   status,
   deals,
-  variant = "flat",
+  variant = "active",
 }) {
   return (
     <>
       <div className={`${styles.storeCard} ${styles[variant]}`}>
         <div className={styles.storeDetails}>
-          <StoreAvatar brand={id} size="md" />
+          <StoreAvatar brand={id} size="lg" />
         </div>
         <div className={styles.storeInfo}>
           <p className={styles.storeName}>{name}</p>
@@ -39,7 +39,7 @@ export default function StoreCard({
             )}
           </div>
           <div className={styles.workingDetails}>
-            <div className={`${styles.circle} ${styles[status]}`}></div>
+            <Badge variant={status} size="md" />
             <p className={styles.openHours}>{openHours}</p>
           </div>
         </div>

@@ -4,6 +4,8 @@
   justify-content: center;
   width: var(--size-control-md);
   height: var(--size-control-md);
+  padding: 0;
+  border: 1px solid currentColor;
   border-radius: var(--border-radius-full);
   color: var(--color-icon-success);
   text-decoration: none;

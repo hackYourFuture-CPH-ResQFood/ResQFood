@@ -13,7 +13,7 @@ const useRealData = process.env.USE_REAL_DATA === "true";
 
 export async function getFoodWasteByStoreId(id) {
   if (useRealData === false) {
-    return data;
+    return data.find((item) => item.store.id === id);
   }
   if (id == null)
     throw new ApiError("Store id is required", {
@@ -53,4 +53,39 @@ export async function getFoodWasteByZip(zip) {
   const query = queryBuilder({ zip });
   const path = `${endpoint}?${query}`;
   return apiClient(path);
+}
+
+export async function getProductByStoreAndEan(id, ean) {
+  if (id == null) {
+    throw new ApiError("Store is not found", {
+      status: 0,
+      details: "MISSING_STORE",
+    });
+  }
+
+  if (ean == null) {
+    throw new ApiError("Product is not found", {
+      status: 0,
+      details: "MISSING_PRODUCT",
+    });
+  }
+
+  const storeResult = await getFoodWasteByStoreId(id);
+
+  const selectedProduct = storeResult.clearances.find((item) => {
+    return String(item.offer.ean) === String(ean);
+  });
+
+  if (!selectedProduct) {
+    throw new ApiError("Product is not found in the store", {
+      status: 404,
+      details: "MISSING_PRODUCT_IN_STORE",
+    });
+  }
+
+  return {
+    store: storeResult.store,
+    offer: selectedProduct.offer,
+    product: selectedProduct.product,
+  };
 }

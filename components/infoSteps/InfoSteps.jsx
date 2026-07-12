@@ -13,6 +13,8 @@ const defaultSteps = [
 export default function InfoSteps({ steps = defaultSteps }) {
     return (
         <div className={styles.infoSteps}>
+            <p className={styles.infoStepTitle}>Rescue good foods.</p>
+            <p className={styles.infoStepSubtitle}>Reduce waste.</p>
             <p className={styles.infoStepText}>
                 Start reducing food waste in 3 simple steps:
             </p>

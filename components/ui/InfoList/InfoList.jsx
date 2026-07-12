@@ -3,24 +3,46 @@ import styles from "./InfoList.module.css";
 
 const infoItems = [
   {
-    text: "Salling Group and ResQFood have partnered to reduce food waste.",
+    id: "products",
+    text: (
+      <>
+        Every day, over 10,000 discounted food products are
+        available in local stores.
+      </>
+    ),
   },
   {
-    text: "Every day, over 10,000 discounted food products are available in local stores.",
+    id: "partnership",
+    text: (
+      <>
+        Salling Group and ResQFood have partnered to reduce
+        food waste.
+      </>
+    ),
   },
   {
-    text: "Find offers near you and help rescue perfectly good food before it goes to waste.",
+    id: "offers",
+    text: (
+      <>
+        Find offers near you and help rescue perfectly good
+        food before it goes to waste.
+      </>
+    ),
   },
 ];
 export default function InfoList({ items = infoItems }) {
   return (
-    <div className={styles.list}>
-      {items.map((item) => (
-        <p key={item.text}>
-          <Logo markOnly size="sm" className={styles.logo} />
-          {item.text}
-        </p>
-      ))}
+    <div className={styles.wrapper}>
+      <div className={styles.list}>
+        {items.map((item) => (
+          <div className={styles.item} key={item.id}>
+            <Logo markOnly size="sm" className={styles.logo} />
+            <p className={styles.text}>{item.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <hr className={styles.divider} />
     </div>
   );
 }

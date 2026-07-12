@@ -33,11 +33,7 @@ export default function ProductFilter({ products = [] }) {
         categories={uniqueCategories}
       />
 
-      <p>
-        Showing {filteredProducts.length} of {products.length} products
-      </p>
-
-      <section>
+           <section>
         {filteredProducts.map((item, index) => (
           <ProductCard
             key={`${item.product?.ean || "product"}-${index}`}

@@ -38,10 +38,10 @@
 }
 
 .lg .wordmark {
-  font-family: var(--font-family-headline-medium);
-  font-size: var(--font-size-headline-medium);
-  line-height: var(--line-height-headline-medium);
-  font-weight: var(--font-weight-headline-medium);
+  font-family: var(--font-family-headline-large);
+  font-size: var(--font-size-headline-large);
+  line-height: var(--line-height-headline-large);
+  font-weight: var(--font-weight-headline-large);
 }
 
 .wordmark {
@@ -51,4 +51,10 @@
 
 .q {
   color: var(--color-background-secondary);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

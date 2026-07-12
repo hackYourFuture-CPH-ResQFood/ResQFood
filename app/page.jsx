@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 import FrontpageBanner from "@/components/FrontpageBanner/FrontpageBanner";
 import InfoList from "@/components/ui/InfoList/InfoList";
@@ -9,12 +10,23 @@ import Message from "@/components/ui/Message/Message";
 import SearchInput from "@/components/ui/SearchInput/SearchInput";
 import { Geolocation } from "@/components/geolocation/Geolocation";
 import InfoSteps from "@/components/infoSteps/InfoSteps";
-// import styles from "./page.module.css";
+import LogoAnimation from "@/components/logoAnimation/LogoAnimation";
 
 export default function Home() {
   const router = useRouter();
   const [locationError, setLocationError] = useState(null);
   const [searchError, setSearchError] = useState("");
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    const alreadyRan = sessionStorage.getItem("animationDidRun");
+
+    if (!alreadyRan) {
+      setShowAnimation(true);
+      sessionStorage.setItem("animationDidRun", "true");
+    }
+  }, []);
+  const [isPending, startTransition] = useTransition();
 
   const buildStoresUrl = (params) => {
     const searchParams = new URLSearchParams(params);
@@ -37,7 +49,9 @@ export default function Home() {
     setSearchError("");
     setLocationError(null);
 
-    router.push(buildStoresUrl({ zip, source: "search" }));
+    startTransition(() => {
+      router.push(buildStoresUrl({ zip, source: "search" }));
+    });
   };
 
   const goToStoresByLocation = (position) => {
@@ -52,13 +66,15 @@ export default function Home() {
     setLocationError(null);
     setSearchError("");
 
-    router.push(
-      buildStoresUrl({
-        lat: String(latitude),
-        lng: String(longitude),
-        source: "geolocation",
-      }),
-    );
+    startTransition(() => {
+      router.push(
+        buildStoresUrl({
+          lat: String(latitude),
+          lng: String(longitude),
+          source: "geolocation",
+        }),
+      );
+    });
   };
 
   const handleLocationError = (errorCode) => {
@@ -68,7 +84,7 @@ export default function Home() {
   const getLocationErrorMessage = (errorCode) => {
     switch (errorCode) {
       case 1:
-        return "Location access was denied. Please allow location access or try again.";
+        return "We could not use your location because permission was denied. Enable location access in your browser settings or search by zip code instead.";
       case 2:
         return "We could not determine your location right now. Please try again.";
       case 3:
@@ -81,35 +97,78 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <section>
-        <FrontpageBanner />
-      </section>
-      <section>
-        {locationError ? (
-          <Message type="error">{getLocationErrorMessage(locationError)}</Message>
-        ) : (
-          <InfoList />
-        )}
-      </section>
-      <section>
-        <SearchInput
-          onSearch={goToStoresBySearch}
-          error={searchError}
-          placeholder="Enter zip code (4 - 5 digits)"
-          inputMode="numeric"
-          maxLength={5}
-        />
-      </section>
-      <section>
-        <Geolocation
-          setUserPosition={goToStoresByLocation}
-          getError={handleLocationError}
-        />
-      </section>
-      <section>
-        <InfoSteps />
-      </section>
-    </main>
+    <>
+      {showAnimation && <LogoAnimation />}
+      <main>
+        <div className="mainPageContainer">
+          <section className="actionSection">
+            <div className="infoBlock">
+              {locationError ? (
+                <Message type="error">
+                  {getLocationErrorMessage(locationError)}
+                </Message>
+              ) : (
+                <InfoSteps />
+              )}
+            </div>
+
+            <div className="packBlock">
+              <Image
+                className="packImage"
+                src="/pack2.png"
+                alt=""
+                aria-hidden="true"
+                width={400}
+                height={400}
+              />
+            </div>
+
+            <div className="searchBlock">
+              <section className="findStoresSection">
+                <h2 className="findStoresTitle">Find stores near you</h2>
+                <SearchInput
+                  onSearch={goToStoresBySearch}
+                  error={searchError}
+                  placeholder="Enter zip code (4 - 5 digits)"
+                  inputMode="numeric"
+                  maxLength={5}
+                  buttonText="Search"
+                  disabled={isPending}
+                />
+              </section>
+
+              <div className="searchDivider" aria-hidden="true">
+                <span className="searchDividerText">or</span>
+              </div>
+
+              <Geolocation
+                setUserPosition={goToStoresByLocation}
+                getError={handleLocationError}
+                isPending={isPending}
+              />
+
+              <p className="togetherText">
+                <Image
+                  className="togetherLeaf"
+                  src="/leaf.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={20}
+                  height={20}
+                />
+                <span>Together we can make a difference.</span>
+              </p>
+            </div>
+          </section>
+          <section>
+            <InfoList />
+          </section>
+
+          <section className="bannerSection">
+            <FrontpageBanner />
+          </section>
+        </div>
+      </main>
+    </>
   );
 }

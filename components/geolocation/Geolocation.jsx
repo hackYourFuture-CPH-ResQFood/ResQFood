@@ -3,7 +3,7 @@ import styles from "./Geolocation.module.css";
 import useGeolocation from "@/hooks/useGeolocation";
 import AnimatedTargetIcon from "./AnimatedTargetIcon";
 
-export function Geolocation({ setUserPosition, getError }) {
+export function Geolocation({ setUserPosition, getError, isPending }) {
   const { loading, getUserLocation } = useGeolocation();
 
   const awaitLocation = async () => {
@@ -20,13 +20,15 @@ export function Geolocation({ setUserPosition, getError }) {
       <button
         className={`${styles.locationButton} location-trigger target-container u-flex-center`}
         onClick={awaitLocation}
-        disabled={loading}
+        disabled={loading || isPending}
+        type="button"
       >
         <AnimatedTargetIcon size={32} />
         <span className={styles.linkText}>
           {loading ? "Getting your location" : "Use my location instead"}
         </span>
       </button>
+      {/* <hr className={styles.divider} /> */}
     </div>
   );
 }

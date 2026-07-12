@@ -1,9 +1,10 @@
-.page {
-  padding: var(--spacing-md);
+.storeCard {
+  display: flex;
+  justify-content: center;
 }
 
-.topBar {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: var(--spacing-md);
+@media (min-width: 768px) {
+  .storeCard {
+    justify-content: flex-start;
+  }
 }

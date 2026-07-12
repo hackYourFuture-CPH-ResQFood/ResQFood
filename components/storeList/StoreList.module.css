@@ -1,7 +1,11 @@
+.storeListInfo {
+  position: relative;
+}
+
 .storeBlock {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   margin: 2rem 0;
   border: 1px solid var(--color-border-primary);
@@ -15,4 +19,27 @@
   width: 100%;
   margin: 1rem 0;
   background-color: #e1d6d6;
+}
+
+.green {
+  color: var(--color-text-accent);
+  font-size: var(--font-size-headline-medium);
+  font-weight: var(--font-weight-headline-medium);
+}
+
+.storesCount {
+  margin-left: 1rem;
+  color: var(--color-text-info);
+  font-family: var(--font-family-body-large);
+  font-size: var(--font-size-body-large);
+  line-height: var(--line-height-body-large);
+  font-weight: var(--font-weight-body-large);
+}
+
+@media (min-width: 768px) {
+  .filterContainer {
+    position: absolute;
+    right: 1rem;
+    top: -2rem;
+  }
 }
