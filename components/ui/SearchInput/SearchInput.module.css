@@ -18,13 +18,20 @@
   min-width: 0;
   border: none;
   padding: 0 var(--spacing-md);
-  font-size: var(--font-size-body-large);
-  color: var(--color-text-primary);
+  color: var(--color-text-success);
   background-color: transparent;
 }
+
+.input[type="text"] {
+  font-size: var(--font-size-label-large);
+  font-weight: var(--font-weight-label-large);
+}
+
 .input::placeholder {
   color: var(--color-text-muted);
+  font-size: var(--font-size-body-small);
 }
+
 .input:focus {
   outline: none;
 }
@@ -43,6 +50,14 @@
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: var(--color-background-success);
+  color: var(--color-text-success);
+}
+
+.button:active {
+  color: var(--color-text-attention);
+}
 .error {
   color: var(--color-text-error);
   font-size: var(--font-size-body-medium);
