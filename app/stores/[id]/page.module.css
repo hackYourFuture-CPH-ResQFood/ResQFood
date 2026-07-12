@@ -1,25 +1,6 @@
-.page {
-  padding: var(--spacing-md);
-}
-
-/* Centered, readable column instead of edge-to-edge content */
-/* .container {
-  width: 100%;
-  max-width: var(--layout-max-width, 88rem);
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-} */
-
 .storeCard {
   display: flex;
   justify-content: center;
-}
-
-.topBar {
-  display: flex;
-  justify-content: flex-start;
 }
 
 @media (min-width: 768px) {

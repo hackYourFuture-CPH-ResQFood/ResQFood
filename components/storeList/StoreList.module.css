@@ -23,8 +23,8 @@
 
 .green {
   color: var(--color-text-accent);
-  font-size: var(--font-size-headline-small);
-  font-weight: var(--font-weight-headline-small);
+  font-size: var(--font-size-headline-medium);
+  font-weight: var(--font-weight-headline-medium);
 }
 
 .storesCount {
@@ -40,6 +40,6 @@
   .filterContainer {
     position: absolute;
     right: 1rem;
-    top: -2.5rem;
+    top: -5.5rem;
   }
 }

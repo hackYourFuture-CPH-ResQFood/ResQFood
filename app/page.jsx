@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -16,6 +16,16 @@ export default function Home() {
   const router = useRouter();
   const [locationError, setLocationError] = useState(null);
   const [searchError, setSearchError] = useState("");
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    const alreadyRan = sessionStorage.getItem("animationDidRun");
+
+    if (!alreadyRan) {
+      setShowAnimation(true);
+      sessionStorage.setItem("animationDidRun", "true");
+    }
+  }, []);
   const [isPending, startTransition] = useTransition();
 
   const buildStoresUrl = (params) => {
@@ -88,7 +98,7 @@ export default function Home() {
 
   return (
     <>
-      <LogoAnimation />
+      {showAnimation && <LogoAnimation />}
       <main>
         <div className="mainPageContainer">
           <section className="actionSection">

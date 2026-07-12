@@ -7,7 +7,6 @@ import {
 } from "@/services/foodWasteService";
 import dataFormatter from "@/components/storeList/dataFormatter.helper";
 import BackLink from "@/components/ui/BackLink/BackLink";
-import "@/styles/base/_pages.css";
 
 export default async function ProductDetailPage({ params }) {
   const { id, productId } = await params;
@@ -33,27 +32,29 @@ export default async function ProductDetailPage({ params }) {
 
   return (
     <main className="productDetailPage">
-      <div className="productDetailPageTopBar">
-        <BackLink />
-      </div>
-
-      <div className="productDetailPageContent">
-        <div className="productDetailStore">
-          <StoreCard
-            name={formattedStore.name}
-            id={formattedStore.brand}
-            address={formattedStore.address}
-            distance={formattedStore.distance}
-            openHours={formattedStore.workingHours}
-            status={formattedStore.status}
-            deals={storeData.clearances?.length ?? 0}
-            variant="inactive"
-          />
+      <div className="pageContentContainer">
+        <div className="pageTopBar">
+          <BackLink />
         </div>
 
-        <section className="productDetailProduct">
-          <ProductDetailCard offer={offer} product={product} />
-        </section>
+        <div className="productDetailPageContent">
+          <div className="productDetailStore">
+            <StoreCard
+              name={formattedStore.name}
+              id={formattedStore.brand}
+              address={formattedStore.address}
+              distance={formattedStore.distance}
+              openHours={formattedStore.workingHours}
+              status={formattedStore.status}
+              deals={storeData.clearances?.length ?? 0}
+              variant="inactive"
+            />
+          </div>
+
+          <section className="productDetailProduct">
+            <ProductDetailCard offer={offer} product={product} />
+          </section>
+        </div>
       </div>
     </main>
   );
