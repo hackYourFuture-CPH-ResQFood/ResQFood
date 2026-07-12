@@ -19,11 +19,11 @@ export default function Home() {
   const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
-    const alreadyRan = localStorage.getItem("animationDidRun");
+    const alreadyRan = sessionStorage.getItem("animationDidRun");
 
     if (!alreadyRan) {
       setShowAnimation(true);
-      localStorage.setItem("animationDidRun", "true");
+      sessionStorage.setItem("animationDidRun", "true");
     }
   }, []);
 
